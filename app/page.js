@@ -5,6 +5,8 @@ import DeliverySolutions from "@/components/DeliverySolutions";
 import StepsSection from "@/components/StepsSection";
 import QuizSection from "@/components/QuizSection";
 import CommitmentSection from "@/components/CommitmentSection";
+import JadeMediaDelivery from "@/components/JadeMediaDelivery";
+import InitiativesSection from "@/components/InitiativesSection";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <StepsSection />
       <QuizSection />
       <CommitmentSection />
+      <JadeMediaDelivery />
+      <InitiativesSection />
     </div>
   );
 }

@@ -63,7 +63,7 @@ export default function CommitmentSection() {
           <div className="rounded-lg bg-white p-6 text-black">
             <div className="relative mx-auto mb-4 h-16 w-16">
               <Image
-                src="/shopping-tems.png"
+                src="/shopping-items.png"
                 alt="Retail Shops"
                 fill
                 className="object-contain"

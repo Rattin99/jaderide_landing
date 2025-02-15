@@ -25,16 +25,18 @@ export default function Hero() {
 
             {/* Form */}
             <form className="pb-12">
-              <div className="space-y-8">
+              {/* Use smaller space on mobile, larger on md+ */}
+              <div className="space-y-4 md:space-y-8">
+                {/* Business Name */}
                 <input
                   type="text"
                   placeholder="Business Name"
                   className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                               focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+                             focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
                 />
 
-                {/* Row 1: Business Name & Select Business Type */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Row 1: Select Business Type & Number of locations */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <select
                     defaultValue=""
                     className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 placeholder-gray-400
@@ -73,7 +75,7 @@ export default function Hero() {
                 />
 
                 {/* Row 3: First & Last Name */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <input
                     type="text"
                     placeholder="First Name"
@@ -89,7 +91,7 @@ export default function Hero() {
                 </div>
 
                 {/* Row 4: Email & Phone */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <input
                     type="email"
                     placeholder="Email"
@@ -108,7 +110,7 @@ export default function Hero() {
               {/* Button (half-width & centered) */}
               <button
                 type="submit"
-                className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-600 text-white p-3 rounded-md  hover:bg-blue-700"
+                className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700"
               >
                 Get Started
               </button>

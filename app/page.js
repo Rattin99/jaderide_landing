@@ -8,6 +8,7 @@ import CommitmentSection from "@/components/CommitmentSection";
 import JadeMediaDelivery from "@/components/JadeMediaDelivery";
 import InitiativesSection from "@/components/InitiativesSection";
 import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <JadeMediaDelivery />
       <InitiativesSection />
       <FAQSection />
+      <Footer />
     </div>
   );
 }

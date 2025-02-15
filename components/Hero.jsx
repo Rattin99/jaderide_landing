@@ -45,9 +45,22 @@ export default function Hero() {
                     <option value="" disabled>
                       Select Business Type
                     </option>
-                    <option value="type1">Type 1</option>
-                    <option value="type2">Type 2</option>
-                    <option value="type3">Type 3</option>
+                    <option value="Restaurant or Coffee shop">
+                      Restaurant or Coffee shop
+                    </option>
+                    <option value="Grocery Store">Grocery Store</option>
+                    <option value="Retail Store">Retail Store</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="Flower Shop">Flower Shop</option>
+                    <option value="Pet Store">Pet Store</option>
+                    <option value="Bakery or Pastry shop">
+                      Bakery or Pastry shop
+                    </option>
+                    <option value="Courier and Logistics Services">
+                      Courier and Logistics Services
+                    </option>
+                    <option value="Bookstore">Bookstore</option>
+                    <option value="Other">Other</option>
                   </select>
 
                   <select
@@ -58,11 +71,11 @@ export default function Hero() {
                     <option value="" disabled>
                       Number of locations
                     </option>
-                    <option value="type1">1-5</option>
-                    <option value="type2">6-10</option>
-                    <option value="type3">11-24</option>
-                    <option value="type3">25-50</option>
-                    <option value="type3">Over 50</option>
+                    <option value="1-5">1-5</option>
+                    <option value="6-10">6-10</option>
+                    <option value="11-24">11-24</option>
+                    <option value="25-50">25-50</option>
+                    <option value="50+">Over 50</option>
                   </select>
                 </div>
 

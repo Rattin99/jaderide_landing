@@ -51,7 +51,7 @@ const Footer = () => {
           <span>Logo Jade Media Delivery</span>
           <span className="ml-1 text-sm">for Merchants</span>
         </div>
-        <Link href="#" className="text-white hover:underline">
+        <Link href="#" className="text-white hidden md:block  hover:underline">
           Become a Partner
         </Link>
       </div>

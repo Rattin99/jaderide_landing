@@ -9,6 +9,8 @@ import {
   HeadphonesIcon,
   Settings,
 } from "lucide-react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 const features = [
   {
@@ -49,80 +51,77 @@ const features = [
 ];
 
 const FinestMart = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
+  // Keen Slider for mobile carousel
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, slider] = useKeenSlider({
+    slides: { perView: 1 },
+    slideChanged(s) {
+      setCurrentSlide(s.track.details.rel);
+    },
+  });
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
-      {/* Header Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">
-          "Why having your own pick up and{" "}
-          <span className="text-blue-600">delivery app</span>?"
-        </h2>
-
+    <div className="w-full h-full   p-10 md:p-40">
+      <div className="flex flex-col md:flex-row items-center">
         {/* Hero Image Section */}
-        <div className="relative w-full mb-16">
-          <div className="flex items-center gap-8">
-            <div className="flex-1">
-              <img
-                src="finestMart.png"
-                alt="Delivery Service Interface"
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
-            <div className="hidden md:block w-1/3">
-              <img
-                src="app.png"
-                alt="Mobile App Interface"
-                className="w-full"
-              />
-            </div>
+        <div className="w-full md:w-1/3 mb-16 flex flex-col justify-center items-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:text-start text-center">
+            "Why having your own pick up and{" "}
+            <span className="text-blue-600">delivery app</span>?"
+          </h2>
+          {/* Flex container for images */}
+          <div className="flex items-center justify-center gap-4">
+            <img
+              src="merged.png"
+              alt="Delivery Service Interface"
+              className="rounded-lg md:w-3/4 h-auto"
+            />
           </div>
         </div>
 
         {/* Features Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:w-2/3">
           {features.map((feature, index) => (
-            <Card key={index} className="border border-gray-200">
+            <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">
-                <feature.icon className="w-6 h-6 text-blue-600 mb-4" />
+                <feature.icon className="w-8 h-8 text-blue-600 mb-4" />
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
+      </div>
 
-        {/* Features Carousel - Mobile */}
-        <div className="md:hidden">
-          <Card className="border border-gray-200">
-            <CardContent className="p-6">
-              {/* Fixed: Using the current feature's icon component correctly */}
-              {React.createElement(features[activeSlide].icon, {
-                className: "w-6 h-6 text-blue-600 mb-4",
-              })}
-              <h3 className="font-semibold mb-2">
-                {features[activeSlide].title}
-              </h3>
-              <p className="text-gray-600 text-sm">
-                {features[activeSlide].description}
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Carousel Dots */}
-          <div className="flex justify-center gap-2 mt-4">
-            {features.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                className={`w-8 h-1 rounded-full transition-colors ${
-                  index === activeSlide ? "bg-blue-600" : "bg-gray-300"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+      {/* Features Carousel - Mobile */}
+      <div className="md:hidden">
+        <div ref={sliderRef} className="keen-slider">
+          {features.map((feature, index) => (
+            <div key={index} className="keen-slider__slide">
+              <Card className="border-none shadow-none">
+                <CardContent className="p-6 flex flex-col justify-center items-center text-center">
+                  {React.createElement(feature.icon, {
+                    className: "w-6 h-6  text-blue-600 mb-4",
+                  })}
+                  <h3 className="font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+        {/* Carousel Dots */}
+        <div className="flex justify-center gap-2 mt-4">
+          {features.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => slider.current?.moveToSlide(index)}
+              className={`w-8 h-1 rounded-full transition-colors ${
+                currentSlide === index ? "bg-blue-600" : "bg-gray-300"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>

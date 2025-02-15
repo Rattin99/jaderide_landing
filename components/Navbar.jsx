@@ -36,9 +36,6 @@ export default function Navbar() {
             </a>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-gray-900">
-              <Search className="h-5 w-5" />
-            </button>
             <div className="relative">
               <button
                 className="text-gray-700 hover:text-gray-900 flex items-center"

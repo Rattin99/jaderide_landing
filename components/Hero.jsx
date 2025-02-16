@@ -8,6 +8,15 @@ import PlacesAutocomplete, {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
@@ -23,9 +32,7 @@ const formSchema = z.object({
 const renderSuggestion = (suggestion, getSuggestionItemProps) => {
   const { placeId } = suggestion;
   const suggestionProps = getSuggestionItemProps(suggestion);
-  // Remove the key from the spread props
   const { key, ...restProps } = suggestionProps;
-
   return (
     <div
       key={placeId}
@@ -40,9 +47,12 @@ const renderSuggestion = (suggestion, getSuggestionItemProps) => {
     </div>
   );
 };
+
 export default function Hero() {
   const [address, setAddress] = useState("");
   const [userLocation, setUserLocation] = useState(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
 
   const {
     register,
@@ -52,7 +62,6 @@ export default function Hero() {
   } = useForm({ resolver: zodResolver(formSchema) });
 
   useEffect(() => {
-    // Get user's location when component mounts
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -86,7 +95,7 @@ export default function Hero() {
     location: userLocation
       ? new google.maps.LatLng(userLocation.lat, userLocation.lng)
       : null,
-    radius: 50000, // Search radius in meters (50km)
+    radius: 50000,
     types: ["address"],
   };
 
@@ -100,6 +109,8 @@ export default function Hero() {
       const data = await response.json();
       if (data.success) {
         console.log("Email sent successfully!");
+        setSubmittedName(formData.firstName);
+        setShowWelcomeModal(true);
       } else {
         console.error("Email sending failed.");
       }
@@ -114,6 +125,27 @@ export default function Hero() {
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
         strategy="beforeInteractive"
       />
+
+      <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Welcome to JMD!</DialogTitle>
+            <DialogDescription>
+              Thank you for joining us, {submittedName}! We're excited to have
+              you on board!
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button
+              onClick={() => setShowWelcomeModal(false)}
+              className="bg-blue-800 hover:bg-blue-700"
+            >
+              Close
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       <div className="py-20 relative">
         <img
           src="hero.jpg"
@@ -132,7 +164,6 @@ export default function Hero() {
                 onSubmit={handleSubmit(formSubmitHandler)}
               >
                 <div className="space-y-4 md:space-y-8">
-                  {/* Business Name Input */}
                   <input
                     {...register("businessName")}
                     placeholder="Business Name"
@@ -143,8 +174,6 @@ export default function Hero() {
                       {errors.businessName.message}
                     </p>
                   )}
-
-                  {/* Business Type and Locations Selects */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <select
                       {...register("businessType")}
@@ -188,8 +217,6 @@ export default function Hero() {
                       <p className="text-red-500">{errors.locations.message}</p>
                     )}
                   </div>
-
-                  {/* Address Autocomplete */}
                   <PlacesAutocomplete
                     value={address}
                     onChange={handleChange}
@@ -229,8 +256,6 @@ export default function Hero() {
                       </div>
                     )}
                   </PlacesAutocomplete>
-
-                  {/* Name Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <input
                       {...register("firstName")}
@@ -249,8 +274,6 @@ export default function Hero() {
                       <p className="text-red-500">{errors.lastName.message}</p>
                     )}
                   </div>
-
-                  {/* Contact Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <input
                       {...register("email")}
@@ -272,8 +295,6 @@ export default function Hero() {
                     )}
                   </div>
                 </div>
-
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"

@@ -19,26 +19,26 @@ export default function Navbar() {
             <span className="font-bold text-xl">Logo</span>
           </div>
           <div className="hidden md:flex items-center space-x-16">
-            <a href="#" className="text-gray-700 hover:text-gray-900">
+            <a href="#" className="text-gray-700 hover:text-blue-800">
               Products
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">
+            <a href="#" className="text-gray-700 hover:text-blue-800">
               Solutions
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">
+            <a href="#" className="text-gray-700 hover:text-blue-800">
               Resources
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">
+            <a href="#" className="text-gray-700 hover:text-blue-800">
               Pricing
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">
+            <a href="#" className="text-gray-700 hover:text-blue-800">
               Contact
             </a>
           </div>
           <div className="flex items-center space-x-4">
             <div className="relative">
               <button
-                className="text-gray-700 hover:text-gray-900 flex items-center"
+                className="text-gray-700 hover:text-blue-800 flex items-center"
                 onClick={toggleLanguageDropdown}
               >
                 <Globe className="h-5 w-5 mr-1" />
@@ -72,7 +72,7 @@ export default function Navbar() {
             </div>
             <a
               href="#"
-              className="text-gray-700 hover:text-gray-900 hidden md:inline"
+              className="text-gray-700 hover:text-blue-800 hidden md:inline"
             >
               Login
             </a>
@@ -103,22 +103,22 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Products
               </a>
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Solutions
               </a>
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Resources
               </a>
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Pricing
               </a>
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Contact
               </a>
-              <a href="#" className="block text-gray-700 hover:text-gray-900">
+              <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Login
               </a>
               <button className="w-full bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-800">

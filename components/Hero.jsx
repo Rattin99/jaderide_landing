@@ -17,10 +17,9 @@ export default function Hero() {
           {/* Right Side (Form Container) */}
           <div className="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
             {/* Header Text */}
-            <h1 className="text-3xl font-bold text-black mb-6">
-              Tap into a new revenue stream with JMD, the
-              <br />
-              perfect pairing for your business.
+            <h1 className="text-xl py-2 font-bold text-black mb-6">
+              Tap into a new revenue stream with JMD, the perfect pairing for
+              your business.
             </h1>
 
             {/* Form */}

@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className=" relative bg-white shadow-md z-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -54,12 +54,7 @@ export default function Navbar() {
                     >
                       English
                     </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Spanish
-                    </a>
+
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -70,12 +65,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-blue-800 hidden md:inline"
-            >
-              Login
-            </a>
+
             <button className="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-700 hidden md:inline">
               Get Started
             </button>
@@ -118,9 +108,7 @@ export default function Navbar() {
               <a href="#" className="block text-gray-700 hover:text-blue-800">
                 Contact
               </a>
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Login
-              </a>
+
               <button className="w-full bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-800">
                 Get Started
               </button>

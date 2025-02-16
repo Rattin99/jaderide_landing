@@ -46,7 +46,7 @@ const Footer = () => {
   return (
     <footer className="w-full">
       {/* Top Banner */}
-      <div className="w-full bg-blue-700 px-4 py-2 flex justify-between items-center">
+      <div className="w-full bg-blue-800 px-4 py-2 flex justify-between items-center">
         <div className="text-white">
           <span>Logo Jade Media Delivery</span>
           <span className="ml-1 text-sm">for Merchants</span>

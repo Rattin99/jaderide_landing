@@ -51,83 +51,85 @@ const InitiativesSection = () => {
   ];
 
   return (
-    <div className="bg-blue-600 p-8">
-      <h2 className="text-3xl font-bold text-center text-white mb-8">
-        Access opportunity, capital, and community
-      </h2>
-      <p className="text-center text-white mb-12">
-        We’ve developed a number of initiatives to support you and the causes
-        you care about.
-      </p>
+    <div className="bg-white px-4 md:px-12">
+      <div className="bg-blue-800 p-8 rounded-md">
+        <h2 className="text-3xl font-bold text-center text-white mb-8">
+          Access opportunity, capital, and community
+        </h2>
+        <p className="text-center text-white mb-12">
+          We’ve developed a number of initiatives to support you and the causes
+          you care about.
+        </p>
 
-      {/* Desktop Layout (Grid) */}
-      <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6 lg:max-w-6xl lg:mx-auto">
-        {initiatives.map((initiative, index) => (
-          <Card
-            key={index}
-            className="w-full p-4 max-w-[300px] mx-auto bg-white"
-          >
-            <img
-              src={initiative.image}
-              alt={initiative.title}
-              className="w-full h-48 rounded object-cover"
-            />
-            <CardHeader className="p-2">
-              <CardTitle className="text-xl font-semibold">
-                {initiative.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-2">
-              <CardDescription className="text-gray-600 mb-6">
-                {initiative.description}
-              </CardDescription>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                {initiative.cta}
-              </button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Mobile Layout (Carousel) */}
-      <div className="lg:hidden keen-slider" ref={sliderRef}>
-        {initiatives.map((initiative, index) => (
-          <div key={index} className="keen-slider__slide">
-            <Card className="w-full max-w-[300px] mx-auto bg-white">
+        {/* Desktop Layout (Grid) */}
+        <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6 lg:max-w-7xl lg:mx-auto">
+          {initiatives.map((initiative, index) => (
+            <Card
+              key={index}
+              className="w-full p-4 max-w-[400px] mx-auto bg-white"
+            >
               <img
                 src={initiative.image}
                 alt={initiative.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 rounded object-cover"
               />
-              <CardHeader>
+              <CardHeader className="p-2">
                 <CardTitle className="text-xl font-semibold">
                   {initiative.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-2">
                 <CardDescription className="text-gray-600 mb-6">
                   {initiative.description}
                 </CardDescription>
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                <button className="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                   {initiative.cta}
                 </button>
               </CardContent>
             </Card>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Carousel Dots (Mobile Only) */}
-      <div className="lg:hidden flex justify-center mt-6 space-x-2">
-        {initiatives.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => slider.moveToSlideRelative(idx)}
-            className={`w-3 h-3 rounded-full ${
-              currentSlide === idx ? "bg-blue-600" : "bg-gray-300"
-            }`}
-          />
-        ))}
+        {/* Mobile Layout (Carousel) */}
+        <div className="lg:hidden keen-slider" ref={sliderRef}>
+          {initiatives.map((initiative, index) => (
+            <div key={index} className="keen-slider__slide">
+              <Card className="w-full max-w-[300px] p-4 mx-auto bg-white">
+                <img
+                  src={initiative.image}
+                  alt={initiative.title}
+                  className="w-full h-48 object-cover rounded-md"
+                />
+                <CardHeader className="p-2">
+                  <CardTitle className="text-xl font-semibold">
+                    {initiative.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-2">
+                  <CardDescription className="text-gray-600 mb-6">
+                    {initiative.description}
+                  </CardDescription>
+                  <button className="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    {initiative.cta}
+                  </button>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+
+        {/* Carousel Dots (Mobile Only) */}
+        <div className="lg:hidden flex justify-center mt-6 space-x-2">
+          {initiatives.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => slider.moveToSlideRelative(idx)}
+              className={`w-3 h-3 rounded-full ${
+                currentSlide === idx ? "bg-blue-800" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

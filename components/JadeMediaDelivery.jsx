@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const JadeMediaDelivery = () => {
   return (
-    <div className="bg-gray-100 p-6 lg:p-12">
+    <div className="bg-white p-6 lg:p-12">
       <div className="max-w-7xl mx-auto">
         {/* Section 1: Get the most out of Jade Media Delivery */}
         <div className="flex flex-col lg:flex-row items-center lg:space-x-12 mb-12">
@@ -32,7 +32,7 @@ const JadeMediaDelivery = () => {
             </p>
             <a
               href="#"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Visit the Learning Center
             </a>
@@ -57,7 +57,7 @@ const JadeMediaDelivery = () => {
               alt="Dashboard Insights"
               width={600}
               height={400}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-none"
             />
           </div>
         </div>

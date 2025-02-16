@@ -68,19 +68,15 @@ export default function Hero() {
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
         strategy="beforeInteractive"
       />
-      <div
-        className="bg-gray-100 py-20"
-        style={{
-          backgroundImage: "url('/hero.jpg')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
+      <div className=" py-20 relative">
+        <img
+          src="hero.jpg"
+          className="absolute top-0 object-cover w-full h-full z-0"
+        />
+        <div className="container relative w-full mx-auto px-4 z-10">
+          <div className="flex flex-col w-full lg:flex-row items-center lg:items-end lg:justify-end">
             <div className="lg:w-1/2"></div>
-            <div className="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
+            <div className="lg:w-2/5 bg-white p-8 rounded-lg shadow-md">
               <h1 className="text-xl py-2 font-bold text-black mb-6">
                 Tap into a new revenue stream with JMD, the perfect pairing for
                 your business.

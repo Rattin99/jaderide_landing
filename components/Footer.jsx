@@ -151,7 +151,7 @@ const Footer = () => {
           <div className="mt-8 pt-8 border-t border-gray-700">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
               <Select defaultValue="en-CA">
-                <SelectTrigger className="w-[180px] bg-transparent text-white border-gray-700">
+                <SelectTrigger className="w-[180px] bg-blue-800 text-white border-gray-700">
                   <SelectValue placeholder="English (CA)" />
                 </SelectTrigger>
                 <SelectContent>

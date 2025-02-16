@@ -18,7 +18,7 @@ export default function Navbar() {
             <Home className="h-6 w-6 mr-2" />
             <span className="font-bold text-xl">Logo</span>
           </div>
-          <div className="hidden md:flex items-center space-x-16">
+          <div className="hidden lg:flex items-center space-x-5 lg:space-x-16">
             <a href="#" className="text-gray-700 hover:text-blue-800">
               Products
             </a>

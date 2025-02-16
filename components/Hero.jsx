@@ -1,6 +1,6 @@
 "use client";
 import Script from "next/script";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -20,14 +20,53 @@ const formSchema = z.object({
   phone: z.string().min(1, "Phone number is required"),
 });
 
+const renderSuggestion = (suggestion, getSuggestionItemProps) => {
+  const { placeId } = suggestion;
+  const suggestionProps = getSuggestionItemProps(suggestion);
+  // Remove the key from the spread props
+  const { key, ...restProps } = suggestionProps;
+
+  return (
+    <div
+      key={placeId}
+      {...restProps}
+      className={
+        suggestion.active
+          ? "bg-gray-200 cursor-pointer p-2"
+          : "bg-white cursor-pointer p-2"
+      }
+    >
+      {suggestion.description}
+    </div>
+  );
+};
 export default function Hero() {
   const [address, setAddress] = useState("");
+  const [userLocation, setUserLocation] = useState(null);
+
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
   } = useForm({ resolver: zodResolver(formSchema) });
+
+  useEffect(() => {
+    // Get user's location when component mounts
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+        },
+      );
+    }
+  }, []);
 
   const handleChange = (value) => {
     setAddress(value);
@@ -43,6 +82,14 @@ export default function Hero() {
       .catch((error) => console.error("Error", error));
   };
 
+  const searchOptions = {
+    location: userLocation
+      ? new google.maps.LatLng(userLocation.lat, userLocation.lng)
+      : null,
+    radius: 50000, // Search radius in meters (50km)
+    types: ["address"],
+  };
+
   const formSubmitHandler = async (formData) => {
     try {
       const response = await fetch("/api/sendEmail", {
@@ -50,7 +97,6 @@ export default function Hero() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       const data = await response.json();
       if (data.success) {
         console.log("Email sent successfully!");
@@ -68,7 +114,7 @@ export default function Hero() {
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
         strategy="beforeInteractive"
       />
-      <div className=" py-20 relative">
+      <div className="py-20 relative">
         <img
           src="hero.jpg"
           className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[800px] z-0"
@@ -86,6 +132,7 @@ export default function Hero() {
                 onSubmit={handleSubmit(formSubmitHandler)}
               >
                 <div className="space-y-4 md:space-y-8">
+                  {/* Business Name Input */}
                   <input
                     {...register("businessName")}
                     placeholder="Business Name"
@@ -97,6 +144,7 @@ export default function Hero() {
                     </p>
                   )}
 
+                  {/* Business Type and Locations Selects */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <select
                       {...register("businessType")}
@@ -125,7 +173,6 @@ export default function Hero() {
                         {errors.businessType.message}
                       </p>
                     )}
-
                     <select
                       {...register("locations")}
                       className="p-3 border border-gray-300 bg-white rounded-md text-gray-700"
@@ -142,10 +189,12 @@ export default function Hero() {
                     )}
                   </div>
 
+                  {/* Address Autocomplete */}
                   <PlacesAutocomplete
                     value={address}
                     onChange={handleChange}
                     onSelect={handleSelect}
+                    searchOptions={searchOptions}
                   >
                     {({
                       getInputProps,
@@ -158,25 +207,19 @@ export default function Hero() {
                           {...getInputProps({
                             placeholder: "123 Street, City, Province, Zip Code",
                             className:
-                              "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black", // Removed border
+                              "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black",
                           })}
                         />
                         <div className="bg-white rounded-md mt-1 shadow-lg">
-                          {suggestions.map((suggestion) => {
-                            const suggestionStyle = suggestion.active
-                              ? "bg-gray-200 cursor-pointer p-2"
-                              : "bg-white cursor-pointer p-2";
-                            return (
-                              <div
-                                key={suggestion.placeId}
-                                {...getSuggestionItemProps(suggestion, {
-                                  className: suggestionStyle,
-                                })}
-                              >
-                                {suggestion.description}
-                              </div>
-                            );
-                          })}
+                          {loading && (
+                            <div className="p-2 text-gray-500">Loading...</div>
+                          )}
+                          {suggestions.map((suggestion) =>
+                            renderSuggestion(
+                              suggestion,
+                              getSuggestionItemProps,
+                            ),
+                          )}
                         </div>
                         {errors.address && (
                           <p className="text-red-500">
@@ -186,6 +229,8 @@ export default function Hero() {
                       </div>
                     )}
                   </PlacesAutocomplete>
+
+                  {/* Name Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <input
                       {...register("firstName")}
@@ -205,6 +250,7 @@ export default function Hero() {
                     )}
                   </div>
 
+                  {/* Contact Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <input
                       {...register("email")}
@@ -226,6 +272,8 @@ export default function Hero() {
                     )}
                   </div>
                 </div>
+
+                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"

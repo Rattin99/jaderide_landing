@@ -65,16 +65,21 @@ const FinestMart = () => {
       <div className="flex flex-col md:flex-row items-center">
         {/* Hero Image Section */}
         <div className="w-full md:w-1/3 mb-16 flex flex-col justify-center items-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:text-start text-center">
-            "Why having your own pick up and{" "}
+          <h2 className="text-2xl md:text-xl w-full font-bold  md:text-start text-center">
+            "Why having your own <br /> pick up and{" "}
             <span className="text-blue-600">delivery app</span>?"
           </h2>
           {/* Flex container for images */}
-          <div className="flex items-center justify-center gap-4">
+          <div className="">
             <img
               src="merged.png"
               alt="Delivery Service Interface"
-              className="rounded-lg md:w-3/4 h-auto"
+              className="rounded-lg md:w-full md:block hidden h-auto shadow-none"
+            />
+            <img
+              src="merged_1.png"
+              alt="Delivery Service Interface"
+              className="rounded-lg md:w-full md:hidden h-auto"
             />
           </div>
         </div>

@@ -10,6 +10,7 @@ import InitiativesSection from "@/components/InitiativesSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import DeliverSections from "@/components/DeliverSection";
+import Script from "next/script";
 
 export default function Home() {
   return (

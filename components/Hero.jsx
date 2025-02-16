@@ -31,7 +31,7 @@ export default function Hero() {
                   type="text"
                   placeholder="Business Name"
                   className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                             focus:outline-none focus:ring-2 focus:ring-blue-600 w-full"
+                             focus:outline-none focus:ring-2 focus:ring-blue-800 w-full"
                 />
 
                 {/* Row 1: Select Business Type & Number of locations */}
@@ -39,7 +39,7 @@ export default function Hero() {
                   <select
                     defaultValue=""
                     className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 placeholder-gray-400
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   >
                     <option value="" disabled>
                       Select Business Type
@@ -65,7 +65,7 @@ export default function Hero() {
                   <select
                     defaultValue=""
                     className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 placeholder-gray-400
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   >
                     <option value="" disabled>
                       Number of locations
@@ -83,7 +83,7 @@ export default function Hero() {
                   type="text"
                   placeholder="123 Street, City, Province, Zip Code"
                   className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                             w-full focus:outline-none focus:ring-2 focus:ring-blue-600"
+                             w-full focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
 
                 {/* Row 3: First & Last Name */}
@@ -92,13 +92,13 @@ export default function Hero() {
                     type="text"
                     placeholder="First Name"
                     className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   />
                   <input
                     type="text"
                     placeholder="Last Name"
                     className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   />
                 </div>
 
@@ -108,13 +108,13 @@ export default function Hero() {
                     type="email"
                     placeholder="Email"
                     className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   />
                   <input
                     type="tel"
                     placeholder="+1 0020"
                     className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700
-                               focus:outline-none focus:ring-2 focus:ring-blue-600"
+                               focus:outline-none focus:ring-2 focus:ring-blue-800"
                   />
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function Hero() {
               {/* Button (half-width & centered) */}
               <button
                 type="submit"
-                className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700"
+                className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"
               >
                 Get Started
               </button>

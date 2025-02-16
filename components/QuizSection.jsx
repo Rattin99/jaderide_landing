@@ -50,7 +50,7 @@ const QuizSection = () => {
                 <CardContent className="p-6">
                   <div className="relative">
                     {selectedOption === option.id && (
-                      <div className="absolute -top-1 -left-1 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center">
+                      <div className="absolute -top-1 -left-1 w-5 h-5 bg-blue-800 rounded-full flex items-center justify-center">
                         <div className="w-2.5 h-2.5 bg-white rounded-full" />
                       </div>
                     )}

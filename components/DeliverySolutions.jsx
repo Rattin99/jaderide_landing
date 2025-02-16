@@ -13,42 +13,42 @@ import {
 
 const DeliverySolutions = () => {
   const solutions = [
-    { icon: <Truck className="w-5 h-5 text-blue-600" />, label: "Restaurant" },
+    { icon: <Truck className="w-5 h-5 text-blue-800" />, label: "Restaurant" },
     {
-      icon: <ShoppingCart className="w-5 h-5 text-blue-600" />,
+      icon: <ShoppingCart className="w-5 h-5 text-blue-800" />,
       label: "Grocery Store",
     },
     {
-      icon: <Wine className="w-5 h-5 text-blue-600" />,
+      icon: <Wine className="w-5 h-5 text-blue-800" />,
       label: "Alcohol Store",
     },
     {
-      icon: <Store className="w-5 h-5 text-blue-600" />,
+      icon: <Store className="w-5 h-5 text-blue-800" />,
       label: "Retail Store",
     },
     {
-      icon: <Flower className="w-5 h-5 text-blue-600" />,
+      icon: <Flower className="w-5 h-5 text-blue-800" />,
       label: "Flower Store",
     },
-    { icon: <PawPrint className="w-5 h-5 text-blue-600" />, label: "Pet shop" },
+    { icon: <PawPrint className="w-5 h-5 text-blue-800" />, label: "Pet shop" },
     {
-      icon: <ShoppingBag className="w-5 h-5 text-blue-600" />,
+      icon: <ShoppingBag className="w-5 h-5 text-blue-800" />,
       label: "Convenience",
     },
     {
-      icon: <HeartPulse className="w-5 h-5 text-blue-600" />,
+      icon: <HeartPulse className="w-5 h-5 text-blue-800" />,
       label: "Pharmacy",
     },
     {
-      icon: <BatteryCharging className="w-5 h-5 text-blue-600" />,
+      icon: <BatteryCharging className="w-5 h-5 text-blue-800" />,
       label: "Batteries",
     },
-    { icon: <Gift className="w-5 h-5 text-blue-600" />, label: "Gifts" },
+    { icon: <Gift className="w-5 h-5 text-blue-800" />, label: "Gifts" },
   ];
 
   return (
     <div className="px-4 mb-36 md:px-12 bg-white">
-      <div className=" p-4  md:py-16 rounded-md bg-blue-600">
+      <div className=" p-4  md:py-16 rounded-md bg-blue-800">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
           Custom delivery solutions for your business.
         </h2>

@@ -67,7 +67,7 @@ const FinestMart = () => {
         <div className="w-full md:w-1/3 mb-16 flex flex-col justify-center items-center">
           <h2 className="text-2xl md:text-xl w-full font-bold  md:text-start text-center">
             "Why having your own <br /> pick up and{" "}
-            <span className="text-blue-600">delivery app</span>?"
+            <span className="text-blue-800">delivery app</span>?"
           </h2>
           {/* Flex container for images */}
           <div className="">
@@ -89,7 +89,7 @@ const FinestMart = () => {
           {features.map((feature, index) => (
             <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">
-                <feature.icon className="w-8 h-8 text-blue-600 mb-4" />
+                <feature.icon className="w-8 h-8 text-blue-800 mb-4" />
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </CardContent>
@@ -106,7 +106,7 @@ const FinestMart = () => {
               <Card className="border-none shadow-none">
                 <CardContent className="p-6 flex flex-col justify-center items-center text-center">
                   {React.createElement(feature.icon, {
-                    className: "w-6 h-6  text-blue-600 mb-4",
+                    className: "w-6 h-6  text-blue-800 mb-4",
                   })}
                   <h3 className="font-semibold mb-2">{feature.title}</h3>
                   <p className="text-gray-600 text-sm">{feature.description}</p>
@@ -122,7 +122,7 @@ const FinestMart = () => {
               key={index}
               onClick={() => slider.current?.moveToSlide(index)}
               className={`w-8 h-1 rounded-full transition-colors ${
-                currentSlide === index ? "bg-blue-600" : "bg-gray-300"
+                currentSlide === index ? "bg-blue-800" : "bg-gray-300"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

@@ -76,7 +76,7 @@ export default function Navbar() {
             >
               Login
             </a>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 hidden md:inline">
+            <button className="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-700 hidden md:inline">
               Get Started
             </button>
             <button
@@ -121,7 +121,7 @@ export default function Navbar() {
               <a href="#" className="block text-gray-700 hover:text-gray-900">
                 Login
               </a>
-              <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-800">
                 Get Started
               </button>
             </div>

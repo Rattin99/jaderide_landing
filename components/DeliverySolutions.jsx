@@ -47,7 +47,7 @@ const DeliverySolutions = () => {
   ];
 
   return (
-    <div className="px-4 md:px-12 bg-white">
+    <div className="px-4 mb-36 md:px-12 bg-white">
       <div className=" p-4  md:py-16 rounded-md bg-blue-600">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
           Custom delivery solutions for your business.

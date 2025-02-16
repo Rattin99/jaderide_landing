@@ -9,6 +9,7 @@ import JadeMediaDelivery from "@/components/JadeMediaDelivery";
 import InitiativesSection from "@/components/InitiativesSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import DeliverSections from "@/components/DeliverSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <FinesMart />
       <DeliverySolutions />
+      <DeliverSections />
       <StepsSection />
       <QuizSection />
       <CommitmentSection />

@@ -25,7 +25,7 @@ export async function POST(req) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "rizayerodela@gmail.com", // Change this to your desired recipient
+      to: "steveolivier2010@gmail.com", // Change this to your desired recipient
       subject: "New Business Inquiry",
       text: `You have a new business inquiry:
       

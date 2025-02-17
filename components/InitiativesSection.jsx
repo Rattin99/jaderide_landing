@@ -112,7 +112,7 @@ const InitiativesSection = () => {
         <div className="lg:hidden keen-slider" ref={sliderRef}>
           {initiatives.map((initiative, index) => (
             <div key={index} className="keen-slider__slide">
-              <Card className="w-full max-w-[300px] p-4 mx-auto bg-white">
+              <Card className="w-full  max-w-lg p-4 mx-auto bg-white">
                 <img
                   src={initiative.image}
                   alt={initiative.title}
@@ -124,7 +124,7 @@ const InitiativesSection = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-2">
-                  <CardDescription className="text-gray-600 mb-6">
+                  <CardDescription className="text-gray-600 pb-10 mb-6">
                     {initiative.description}
                   </CardDescription>
                   <button className="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">

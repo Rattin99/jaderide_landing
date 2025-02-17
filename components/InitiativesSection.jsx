@@ -70,7 +70,7 @@ const InitiativesSection = () => {
   return (
     <div className="bg-white px-4 md:px-12">
       <div className="bg-blue-800 p-8 rounded-md">
-        <h2 className="text-3xl font-bold text-center text-white mb-8">
+        <h2 className="text-3xl  font-semibold text-center text-white mb-8">
           {t.initiativeSection.mainTitle}
         </h2>
         <p className="text-center text-white mb-12">

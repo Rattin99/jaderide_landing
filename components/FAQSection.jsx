@@ -116,7 +116,7 @@ const FAQSection = () => {
   ];
   return (
     <div className="bg-white p-8">
-      <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+      <h2 className="text-2xl font-semibold text-center text-gray-700 mb-8">
         {t.faqSection.title}
       </h2>
 

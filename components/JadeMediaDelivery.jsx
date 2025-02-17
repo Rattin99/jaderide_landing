@@ -22,7 +22,7 @@ const JadeMediaDelivery = () => {
             />
           </div>
           <div className="lg:w-1/2 mt-6 lg:mt-0">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-semibold text-gray-700  mb-6">
               {t.jadeMediaDelivery.title}
             </h2>
             <p className="text-gray-700 mb-6">
@@ -43,7 +43,7 @@ const JadeMediaDelivery = () => {
         {/* Section 2: Explore insights you can use */}
         <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
           <div className="lg:w-1/2 order-2 lg:order-1 mt-6 lg:mt-0">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-semibold text-gray-700 mb-6">
               {t.jadeMediaDelivery.explore}
             </h2>
             <p className="text-gray-700 mb-6">

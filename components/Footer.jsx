@@ -62,9 +62,7 @@ const Footer = () => {
   ];
   const { language } = useContext(LanguageContext);
   const t = translations[language];
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => {};
   return (
     <footer className="w-full">
       {/* Top Banner */}

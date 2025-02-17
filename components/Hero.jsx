@@ -19,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { LanguageContext } from "@/lib/LanguageContext";
 import { translations } from "@/public/language/language";
-import { CircleCheck } from "lucide-react";
 
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
@@ -130,11 +129,10 @@ export default function Hero() {
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
         strategy="beforeInteractive"
       />
-
       <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle className="text-blue-800 flex w-full justify-center items-center">
+            <DialogTitle className="text-blue-600 flex w-full justify-center items-center">
               {t.welcomeModal.title}
             </DialogTitle>
             <DialogDescription>{t.welcomeModal.description}</DialogDescription>

@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { LanguageContext } from "@/lib/LanguageContext";
 import { translations } from "@/public/language/language";
+import { CircleCheck } from "lucide-react";
 
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
@@ -133,8 +134,9 @@ export default function Hero() {
       <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>{t.welcomeModal.title}</DialogTitle>
-            <DialogDescription>{t.welcomeModal.description}</DialogDescription>
+            <DialogTitle className="text-green-600 flex w-full justify-center items-center">
+              <CircleCheck color="green" size={64} />
+            </DialogTitle>
           </DialogHeader>
           <DialogFooter>
             <Button

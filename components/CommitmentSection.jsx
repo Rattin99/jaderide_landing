@@ -1,20 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 export default function CommitmentSection() {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <div className="bg-white px-4 mb-20 md:px-12">
       <section className="bg-blue-800 py-10 text-white rounded-md">
         <div className="mx-auto max-w-7xl px-4 text-center">
           {/* Section heading */}
           <h2 className="mb-2 text-2xl font-bold sm:text-3xl">
-            We’re committed to strengthening neighborhoods
+            {t.commitmentSection.title}
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-gray-100">
-            Since our founding in 2013, Jade Media Delivery Marketplace has
-            generated over $100 billion in sales for merchants.
+            {t.commitmentSection.description}
           </p>
 
           {/* Cards */}
@@ -29,14 +32,12 @@ export default function CommitmentSection() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Grocery</h3>
-              <p className="mb-4 text-sm">
-                Whether it's expanding your store's reach or providing a
-                seamless grocery delivery experience, Jade Media Delivery is
-                here to help.
-              </p>
+              <h3 className="mb-2 text-lg font-semibold">
+                {t.commitmentSection.grocery.title}
+              </h3>
+              <p className="mb-4 text-sm">{t.commitmentSection.description}</p>
               <button className="rounded bg-blue-800 px-4 py-2 text-white hover:bg-blue-700">
-                Join for Grocery
+                {t.commitmentSection.grocery.button}
               </button>
             </div>
 
@@ -50,14 +51,14 @@ export default function CommitmentSection() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Convenience</h3>
+              <h3 className="mb-2 text-lg font-semibold">
+                {t.commitmentSection.convenience.title}
+              </h3>
               <p className="mb-4 text-sm">
-                Offer local retail delivery like beauty supplies, office
-                supplies, home goods, electronics, baby goods, convenience
-                stores. Use Jade Media Delivery to boost sales.
+                {t.commitmentSection.convenience.description}
               </p>
               <button className="rounded bg-blue-800 px-4 py-2 text-white hover:bg-blue-700">
-                Join for Convenience
+                {t.commitmentSection.convenience.button}
               </button>
             </div>
 
@@ -71,14 +72,14 @@ export default function CommitmentSection() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Retail Shops</h3>
+              <h3 className="mb-2 text-lg font-semibold">
+                {t.commitmentSection.retail.title}
+              </h3>
               <p className="mb-4 text-sm">
-                From clothing boutiques to specialty stores, reach more
-                customers and increase your revenue with Jade Media Delivery's
-                fast and reliable service.
+                {t.commitmentSection.retail.description}
               </p>
               <button className="rounded bg-blue-800 px-4 py-2 text-white hover:bg-blue-700">
-                Join for Retail
+                {t.commitmentSection.retail.button}
               </button>
             </div>
           </div>

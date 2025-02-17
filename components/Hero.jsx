@@ -1,6 +1,6 @@
 "use client";
 import Script from "next/script";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -17,6 +17,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
@@ -53,6 +55,8 @@ export default function Hero() {
   const [userLocation, setUserLocation] = useState(null);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
 
   const {
     register,
@@ -129,18 +133,15 @@ export default function Hero() {
       <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Welcome to JMD!</DialogTitle>
-            <DialogDescription>
-              Thank you for joining us, {submittedName}! We're excited to have
-              you on board!
-            </DialogDescription>
+            <DialogTitle>{t.welcomeModal.title}</DialogTitle>
+            <DialogDescription>{t.welcomeModal.description}</DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button
               onClick={() => setShowWelcomeModal(false)}
               className="bg-blue-800 hover:bg-blue-700"
             >
-              Close
+              {t.welcomeModal.closeButton}
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -156,8 +157,7 @@ export default function Hero() {
             <div className="lg:w-1/2"></div>
             <div className="lg:w-2/5 bg-white p-8 rounded-lg shadow-md">
               <h1 className="text-xl py-2 font-bold text-black mb-6">
-                Tap into a new revenue stream with JMD, the perfect pairing for
-                your business.
+                {t.heroSection.title}
               </h1>
               <form
                 className="pb-12"
@@ -166,7 +166,7 @@ export default function Hero() {
                 <div className="space-y-4 md:space-y-8">
                   <input
                     {...register("businessName")}
-                    placeholder="Business Name"
+                    placeholder={t.form.businessNamePlaceholder}
                     className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700 w-full"
                   />
                   {errors.businessName && (
@@ -179,23 +179,37 @@ export default function Hero() {
                       {...register("businessType")}
                       className="p-3 border border-gray-300 bg-white rounded-md text-gray-700"
                     >
-                      <option value="">Select Business Type</option>
+                      <option value="">{t.form.businessTypePlaceholder}</option>
                       <option value="Restaurant or Coffee shop">
-                        Restaurant or Coffee shop
+                        {t.form.businessTypes.restaurant}
                       </option>
-                      <option value="Grocery Store">Grocery Store</option>
-                      <option value="Retail Store">Retail Store</option>
-                      <option value="Pharmacy">Pharmacy</option>
-                      <option value="Flower Shop">Flower Shop</option>
-                      <option value="Pet Store">Pet Store</option>
+                      <option value="Grocery Store">
+                        {t.form.businessTypes.grocery}
+                      </option>
+                      <option value="Retail Store">
+                        {t.form.businessTypes.retail}
+                      </option>
+                      <option value="Pharmacy">
+                        {t.form.businessTypes.pharmacy}
+                      </option>
+                      <option value="Flower Shop">
+                        {t.form.businessTypes.flowerShop}
+                      </option>
+                      <option value="Pet Store">
+                        {t.form.businessTypes.petStore}
+                      </option>
                       <option value="Bakery or Pastry shop">
-                        Bakery or Pastry shop
+                        {t.form.businessTypes.bakery}
                       </option>
                       <option value="Courier and Logistics Services">
-                        Courier and Logistics Services
+                        {t.form.businessTypes.courier}
                       </option>
-                      <option value="Bookstore">Bookstore</option>
-                      <option value="Other">Other</option>
+                      <option value="Bookstore">
+                        {t.form.businessTypes.bookstore}
+                      </option>
+                      <option value="Other">
+                        {t.form.businessTypes.other}
+                      </option>
                     </select>
                     {errors.businessType && (
                       <p className="text-red-500">
@@ -206,7 +220,7 @@ export default function Hero() {
                       {...register("locations")}
                       className="p-3 border border-gray-300 bg-white rounded-md text-gray-700"
                     >
-                      <option value="">Number of locations</option>
+                      <option value="">{t.form.locationsPlaceholder}</option>
                       <option value="1-5">1-5</option>
                       <option value="6-10">6-10</option>
                       <option value="11-24">11-24</option>
@@ -232,14 +246,16 @@ export default function Hero() {
                       <div>
                         <input
                           {...getInputProps({
-                            placeholder: "123 Street, City, Province, Zip Code",
+                            placeholder: t.form.addressPlaceholder,
                             className:
                               "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black",
                           })}
                         />
                         <div className="bg-white rounded-md mt-1 shadow-lg">
                           {loading && (
-                            <div className="p-2 text-gray-500">Loading...</div>
+                            <div className="p-2 text-gray-500">
+                              {t.form.loading}
+                            </div>
                           )}
                           {suggestions.map((suggestion) =>
                             renderSuggestion(
@@ -259,7 +275,7 @@ export default function Hero() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <input
                       {...register("firstName")}
-                      placeholder="First Name"
+                      placeholder={t.form.firstNamePlaceholder}
                       className="p-3 border border-gray-300 rounded-md"
                     />
                     {errors.firstName && (
@@ -267,7 +283,7 @@ export default function Hero() {
                     )}
                     <input
                       {...register("lastName")}
-                      placeholder="Last Name"
+                      placeholder={t.form.lastNamePlaceholder}
                       className="p-3 border border-gray-300 rounded-md"
                     />
                     {errors.lastName && (
@@ -278,7 +294,7 @@ export default function Hero() {
                     <input
                       {...register("email")}
                       type="email"
-                      placeholder="Email"
+                      placeholder={t.form.emailPlaceholder}
                       className="p-3 border border-gray-300 rounded-md"
                     />
                     {errors.email && (
@@ -286,7 +302,7 @@ export default function Hero() {
                     )}
                     <input
                       {...register("phone")}
-                      type="tel"
+                      type={t.form.phonePlaceholder}
                       placeholder="+1 0020"
                       className="p-3 border border-gray-300 rounded-md"
                     />
@@ -299,7 +315,7 @@ export default function Hero() {
                   type="submit"
                   className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"
                 >
-                  Get Started
+                  {t.form.submitButton}
                 </button>
               </form>
             </div>

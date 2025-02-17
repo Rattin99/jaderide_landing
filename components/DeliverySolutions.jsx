@@ -1,3 +1,6 @@
+"use client";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 import {
   Truck,
   ShoppingCart,
@@ -10,47 +13,69 @@ import {
   Gift,
   BatteryCharging,
 } from "lucide-react";
+import { useContext } from "react";
 
 const DeliverySolutions = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   const solutions = [
-    { icon: <Truck className="w-5 h-5 text-blue-800" />, label: "Restaurant" },
+    {
+      icon: <Truck className="w-5 h-5 text-blue-800" />,
+      label: "Restaurant",
+      labelFr: "Restaurant",
+    },
     {
       icon: <ShoppingCart className="w-5 h-5 text-blue-800" />,
       label: "Grocery Store",
+      labelFr: "Épicerie",
     },
     {
       icon: <Wine className="w-5 h-5 text-blue-800" />,
       label: "Alcohol Store",
+      labelFr: "Magasin d'alcool",
     },
     {
       icon: <Store className="w-5 h-5 text-blue-800" />,
       label: "Retail Store",
+      labelFr: "Magasin de détail",
     },
     {
       icon: <Flower className="w-5 h-5 text-blue-800" />,
       label: "Flower Store",
+      labelFr: "Fleuriste",
     },
-    { icon: <PawPrint className="w-5 h-5 text-blue-800" />, label: "Pet shop" },
+    {
+      icon: <PawPrint className="w-5 h-5 text-blue-800" />,
+      label: "Pet shop",
+      labelFr: "Animalerie",
+    },
     {
       icon: <ShoppingBag className="w-5 h-5 text-blue-800" />,
       label: "Convenience",
+      labelFr: "Dépanneur",
     },
     {
       icon: <HeartPulse className="w-5 h-5 text-blue-800" />,
       label: "Pharmacy",
+      labelFr: "Pharmacie",
     },
     {
       icon: <BatteryCharging className="w-5 h-5 text-blue-800" />,
       label: "Batteries",
+      labelFr: "Batteries",
     },
-    { icon: <Gift className="w-5 h-5 text-blue-800" />, label: "Gifts" },
+    {
+      icon: <Gift className="w-5 h-5 text-blue-800" />,
+      label: "Gifts",
+      labelFr: "Cadeaux",
+    },
   ];
 
   return (
     <div className="px-4 mb-36 md:px-12 bg-white">
       <div className=" p-4  md:py-16 rounded-md bg-blue-800">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
-          Custom delivery solutions for your business.
+          {t.deliverySolutions.title}
         </h2>
 
         {/* Mobile: 2 boxes per row */}
@@ -62,7 +87,7 @@ const DeliverySolutions = () => {
             >
               <div className="mr-2">{solution.icon}</div>
               <p className="text-sm  text-nowrap text-center text-gray-800">
-                {solution.label}
+                {language == "en" ? solution.label : solution.labelFr}
               </p>
             </div>
           ))}
@@ -79,7 +104,7 @@ const DeliverySolutions = () => {
               >
                 <div className="mr-2">{solution.icon}</div>
                 <p className="text-sm font-medium text-gray-800">
-                  {solution.label}
+                  {language == "en" ? solution.label : solution.labelFr}
                 </p>
               </div>
             ))}
@@ -94,6 +119,7 @@ const DeliverySolutions = () => {
               >
                 <div className="mr-2">{solution.icon}</div>
                 <p className="text-sm font-medium text-gray-800">
+                  {language == "en" ? solution.label : solution.labelFr}{" "}
                   {solution.label}
                 </p>
               </div>
@@ -109,7 +135,7 @@ const DeliverySolutions = () => {
               >
                 <div className="mr-2">{solution.icon}</div>
                 <p className="text-sm font-medium text-gray-800">
-                  {solution.label}
+                  {language == "en" ? solution.label : solution.labelFr}
                 </p>
               </div>
             ))}

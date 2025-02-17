@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Shield,
@@ -11,45 +11,64 @@ import {
 } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 const features = [
   {
     icon: Shield,
     title: "A trusted delivery partner.",
+    titleFr: "Un partenaire de livraison de confiance.",
     description:
-      "Over 10 years of experience delivering goods to Canadians across the country",
+      "Over 10 years of experience delivering goods to Canadians across the country.",
+    descriptionFr:
+      "Plus de 10 ans d'expérience dans la livraison de marchandises aux Canadiens à travers le pays.",
   },
   {
     icon: Users,
     title: "1 in 4 Canadians order with JMD",
+    titleFr: "1 Canadien sur 4 commande avec JMD",
     description:
-      "Over 10 years of experience delivering goods to Canadians across the country",
+      "Over 10 years of experience delivering goods to Canadians across the country.",
+    descriptionFr:
+      "Plus de 10 ans d'expérience dans la livraison de marchandises aux Canadiens à travers le pays.",
   },
   {
     icon: Clock,
     title: "30-minute average delivery time.",
+    titleFr: "Temps de livraison moyen de 30 minutes.",
     description:
       "Seamless delivery of your product to a customer's door in their moment of need.",
+    descriptionFr:
+      "Livraison fluide de votre produit à la porte d'un client au moment où il en a besoin.",
   },
   {
     icon: Megaphone,
     title: "Amplify your reach.",
+    titleFr: "Amplifiez votre portée.",
     description:
       "Join over 50k other JMD partners attracting new customers from a pool of 5.3+ million Canadians in more than 190 delivery zones across the country.",
+    descriptionFr:
+      "Rejoignez plus de 50 000 autres partenaires JMD attirant de nouveaux clients parmi plus de 5,3 millions de Canadiens dans plus de 190 zones de livraison à travers le pays.",
   },
   {
     icon: HeadphonesIcon,
-    title: "Account support when your need it",
+    title: "Account support when you need it",
+    titleFr: "Support de compte quand vous en avez besoin.",
     description: "A dedicated team of experts to support all your needs.",
+    descriptionFr:
+      "Une équipe dédiée d'experts pour répondre à tous vos besoins.",
   },
   {
     icon: Settings,
     title: "Self-serve management tools.",
+    titleFr: "Outils de gestion en libre-service.",
     description:
-      "Confidently manage and grow your business with wide range of powerful marketing tools and customer insights at your disposal.",
+      "Confidently manage and grow your business with a wide range of powerful marketing tools and customer insights at your disposal.",
+    descriptionFr:
+      "Gérez et développez votre entreprise en toute confiance avec une large gamme d'outils marketing puissants et d'analyses clients à votre disposition.",
   },
 ];
-
 const FinestMart = () => {
   // Keen Slider for mobile carousel
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -59,6 +78,8 @@ const FinestMart = () => {
       setCurrentSlide(s.track.details.rel);
     },
   });
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
 
   return (
     <div className="w-full h-full   p-10 md:p-40">
@@ -66,8 +87,7 @@ const FinestMart = () => {
         {/* Hero Image Section */}
         <div className="w-full md:w-1/3 mb-16 flex flex-col justify-center items-center">
           <h2 className="text-2xl md:text-xl w-full font-bold  md:text-start text-center">
-            "Why having your own <br /> pick up and{" "}
-            <span className="text-blue-800">delivery app</span>?"
+            {t.finestMart.title}
           </h2>
           {/* Flex container for images */}
           <div className="">
@@ -90,8 +110,14 @@ const FinestMart = () => {
             <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">
                 <feature.icon className="w-8 h-8 text-blue-800 mb-4" />
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm">{feature.description}</p>
+                <h3 className="font-semibold mb-2">
+                  {language == "en" ? feature.title : feature.titleFr}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {language == "en"
+                    ? feature.description
+                    : feature.descriptionFr}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -108,8 +134,14 @@ const FinestMart = () => {
                   {React.createElement(feature.icon, {
                     className: "w-6 h-6  text-blue-800 mb-4",
                   })}
-                  <h3 className="font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                  <h3 className="font-semibold mb-2">
+                    {language == "en" ? feature.title : feature.titleFr}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {language == "en"
+                      ? feature.description
+                      : feature.descriptionFr}
+                  </p>
                 </CardContent>
               </Card>
             </div>

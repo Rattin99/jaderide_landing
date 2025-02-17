@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import Link from "next/link";
 import {
   Select,
@@ -7,52 +8,70 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 const Footer = () => {
   const products = [
-    { name: "Marketplace", href: "#" },
-    { name: "Storefront", href: "#" },
-    { name: "On-Demand Delivery", href: "#" },
-    { name: "All Products", href: "#" },
+    { name: "Marketplace", name_fr: "Place de marché", href: "#" },
+    { name: "Storefront", name_fr: "Vitrine", href: "#" },
+    {
+      name: "On-Demand Delivery",
+      name_fr: "Livraison à la demande",
+      href: "#",
+    },
+    { name: "All Products", name_fr: "Tous les produits", href: "#" },
   ];
 
+  // Business Types with French translations
   const businessTypes = [
-    { name: "Restaurant", href: "#" },
-    { name: "Grocery", href: "#" },
-    { name: "Alcohol", href: "#" },
-    { name: "Convenience", href: "#" },
-    { name: "Flower Shops", href: "#" },
-    { name: "Pet Stores", href: "#" },
-    { name: "Retails", href: "#" },
+    { name: "Restaurant", name_fr: "Restaurant", href: "#" },
+    { name: "Grocery", name_fr: "Épicerie", href: "#" },
+    { name: "Alcohol", name_fr: "Alcool", href: "#" },
+    { name: "Convenience", name_fr: "Commodité", href: "#" },
+    { name: "Flower Shops", name_fr: "Fleuristes", href: "#" },
+    { name: "Pet Stores", name_fr: "Animaleries", href: "#" },
+    { name: "Retails", name_fr: "Commerce de détail", href: "#" },
   ];
 
+  // Resources with French translations
   const resources = [
-    { name: "Merchant Blog", href: "#" },
-    { name: "Learning Center", href: "#" },
-    { name: "Guides & Webinars", href: "#" },
-    { name: "Benefits & Discounts", href: "#" },
-    { name: "Advocacy & Access", href: "#" },
-    { name: "Help & FAQ", href: "#" },
+    { name: "Merchant Blog", name_fr: "Blog des marchands", href: "#" },
+    { name: "Learning Center", name_fr: "Centre d'apprentissage", href: "#" },
+    { name: "Guides & Webinars", name_fr: "Guides et webinaires", href: "#" },
+    {
+      name: "Benefits & Discounts",
+      name_fr: "Avantages et réductions",
+      href: "#",
+    },
+    { name: "Advocacy & Access", name_fr: "Plaidoyer et accès", href: "#" },
+    { name: "Help & FAQ", name_fr: "Aide et FAQ", href: "#" },
   ];
 
+  // Legal Links with French translations
   const legalLinks = [
-    { name: "Terms", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Referral Program", href: "#" },
-    { name: "COVID-19", href: "#" },
-    { name: "Do Not Sell or Share My Personal Information", href: "#" },
+    { name: "Terms", name_fr: "Conditions", href: "#" },
+    { name: "Privacy", name_fr: "Confidentialité", href: "#" },
+    { name: "Referral Program", name_fr: "Programme de parrainage", href: "#" },
+    { name: "COVID-19", name_fr: "COVID-19", href: "#" },
+    {
+      name: "Do Not Sell or Share My Personal Information",
+      name_fr: "Ne pas vendre ou partager mes informations personnelles",
+      href: "#",
+    },
   ];
-
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <footer className="w-full">
       {/* Top Banner */}
       <div className="w-full bg-blue-800 px-4 py-2 flex justify-between items-center">
         <div className="text-white">
-          <span>Logo Jade Media Delivery</span>
-          <span className="ml-1 text-sm">for Merchants</span>
+          <span>{t.footer.name}</span>
+          <span className="ml-1 text-sm">{t.footer.forMerchants}</span>
         </div>
         <Link href="#" className="text-white hidden md:block  hover:underline">
-          Become a Partner
+          {t.footer.becomePartner}
         </Link>
       </div>
 
@@ -65,36 +84,38 @@ const Footer = () => {
               <h2 className="text-lg font-bold mb-4">Logo</h2>
             </div>
             <div>
-              <h2 className="text-lg font-bold mb-4">PRODUCTS</h2>
+              <h2 className="text-lg font-bold mb-4">{t.footer.products}</h2>
               <ul className="space-y-2">
                 {products.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href} className="hover:underline">
-                      {item.name}
+                      {language == "en" ? item.name : item.name_fr}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="text-lg font-bold mb-4">BUSINESS TYPES</h2>
+              <h2 className="text-lg font-bold mb-4">
+                {t.footer.businessTypes}
+              </h2>
               <ul className="space-y-2">
                 {businessTypes.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href} className="hover:underline">
-                      {item.name}
+                      {language == "en" ? item.name : item.name_fr}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h2 className="text-lg font-bold mb-4">RESOURCES</h2>
+              <h2 className="text-lg font-bold mb-4">{t.footer.resources}</h2>
               <ul className="space-y-2">
                 {resources.map((item) => (
                   <li key={item.name}>
                     <Link href={item.href} className="hover:underline">
-                      {item.name}
+                      {language == "en" ? item.name : item.name_fr}
                     </Link>
                   </li>
                 ))}
@@ -150,12 +171,17 @@ const Footer = () => {
           {/* Language Selector and Legal Links */}
           <div className="mt-8 pt-8 border-t border-gray-700">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
-              <Select defaultValue="en-CA">
+              <Select value={language == "en" ? "en-CA" : "fr-CA"}>
                 <SelectTrigger className="w-[180px] bg-blue-800 text-white border-gray-700">
-                  <SelectValue placeholder="English (CA)" />
+                  <SelectValue
+                    placeholder={
+                      language == "en" ? "English(CA)" : "French(CA)"
+                    }
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="en-CA">English (CA)</SelectItem>
+                  <SelectItem value="fr-CA">French(CA)</SelectItem>
                 </SelectContent>
               </Select>
 
@@ -166,7 +192,7 @@ const Footer = () => {
                       href={link.href}
                       className="text-sm text-gray-400 hover:text-white"
                     >
-                      {link.name}
+                      {language == "en" ? link.name : link.name_fr}
                     </Link>
                   </React.Fragment>
                 ))}

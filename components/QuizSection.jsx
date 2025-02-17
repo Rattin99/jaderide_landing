@@ -1,24 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 const options = [
   {
     id: 1,
     image: "/gain.png",
     title: "Gain the most new customers and new orders.",
+    title_fr: "Gagnez le plus de nouveaux clients et de nouvelles commandes.",
   },
   {
     id: 2,
     image: "/piggybank.png",
     title:
       "Get Jade Media Delivery solutions at a lower cost, even if it means fewer sales or customers",
+    title_fr:
+      "Obtenez les solutions Jade Media Delivery à un coût réduit, même si cela signifie moins de ventes ou de clients.",
   },
 ];
 
 const QuizSection = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-16">
@@ -26,12 +33,10 @@ const QuizSection = () => {
         {/* Text Section */}
         <div className="mb-8 md:mb-0 md:w-1/3">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            Take our short quiz to identify the right solution for you
+            {t.quizSection.title}
           </h1>
-          <p className="text-lg text-gray-700 mb-2">
-            Which of these is more important to you?
-          </p>
-          <p className="text-sm text-gray-500">Select one</p>
+          <p className="text-lg text-gray-700 mb-2">{t.quizSection.subtitle}</p>
+          <p className="text-sm text-gray-500">{t.quizSection.select}</p>
         </div>
 
         {/* Options Section */}
@@ -63,7 +68,7 @@ const QuizSection = () => {
                         />
                       </div>
                       <p className="text-gray-800 text-sm md:text-base">
-                        {option.title}
+                        {language == "en" ? option.title : option.title_fr}
                       </p>
                     </div>
                   </div>

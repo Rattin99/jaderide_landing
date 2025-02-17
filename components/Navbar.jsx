@@ -1,14 +1,18 @@
 "use client";
-import { Home, Search, Globe } from "lucide-react";
-import { useState } from "react";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
+import { Home, Globe } from "lucide-react";
+import { useContext, useState } from "react";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-
+  const { language, setLanguage } = useContext(LanguageContext);
   const toggleLanguageDropdown = () => {
     setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
   };
+
+  const t = translations[language];
 
   return (
     <nav className=" relative bg-white shadow-md z-20">
@@ -20,19 +24,19 @@ export default function Navbar() {
           </div>
           <div className="hidden lg:flex items-center space-x-5 lg:space-x-16">
             <a href="#" className="text-gray-700 hover:text-blue-800">
-              Products
+              {t.navbar.products}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
-              Solutions
+              {t.navbar.solutions}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
-              Resources
+              {t.navbar.resources}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
-              Pricing
+              {t.navbar.pricing}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
-              Contact
+              {t.navbar.contact}
             </a>
           </div>
           <div className="flex items-center space-x-4">
@@ -42,7 +46,7 @@ export default function Navbar() {
                 onClick={toggleLanguageDropdown}
               >
                 <Globe className="h-5 w-5 mr-1" />
-                ENG
+                {language}
               </button>
               {/* Dropdown for language selection */}
               {isLanguageDropdownOpen && (
@@ -51,6 +55,10 @@ export default function Navbar() {
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => {
+                        setLanguage("en");
+                        setIsLanguageDropdownOpen(false);
+                      }}
                     >
                       English
                     </a>
@@ -58,6 +66,10 @@ export default function Navbar() {
                     <a
                       href="#"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => {
+                        setLanguage("fr");
+                        setIsLanguageDropdownOpen(false);
+                      }}
                     >
                       French
                     </a>
@@ -67,7 +79,7 @@ export default function Navbar() {
             </div>
 
             <button className="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-700 hidden md:inline">
-              Get Started
+              {t.navbar.button}
             </button>
             <button
               className="md:hidden"
@@ -94,23 +106,23 @@ export default function Navbar() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Products
+                {t.navbar.products}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Solutions
+                {t.navbar.solutions}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Resources
+                {t.navbar.resources}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Pricing
+                {t.navbar.pricing}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
-                Contact
+                {t.navbar.contact}
               </a>
 
               <button className="w-full bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-800">
-                Get Started
+                {t.navbar.button}
               </button>
             </div>
           </div>

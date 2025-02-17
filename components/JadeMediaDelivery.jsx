@@ -1,6 +1,12 @@
+"use client";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 import Image from "next/image";
+import { useContext } from "react";
 
 const JadeMediaDelivery = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <div className="bg-white p-6 lg:p-12">
       <div className="max-w-7xl mx-auto">
@@ -17,24 +23,19 @@ const JadeMediaDelivery = () => {
           </div>
           <div className="lg:w-1/2 mt-6 lg:mt-0">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Get the most out of Jade Media Delivery
+              {t.jadeMediaDelivery.title}
             </h2>
             <p className="text-gray-700 mb-6">
-              We provide customized, accessible support whenever you need it,
-              including 24/7 phone and chat support, account help, and direct
-              communication with assigned drivers.
+              {t.jadeMediaDelivery.description.part1}
             </p>
             <p className="text-gray-700 mb-6">
-              Plus, visit the Learning Center to view step-by-step tutorials and
-              training videos on setting up, running, and growing your store on
-              Jade Media Delivery, so you can grow profits and reach more new
-              customers.
+              {t.jadeMediaDelivery.description.part2}
             </p>
             <a
               href="#"
               className="inline-block bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Visit the Learning Center
+              {t.jadeMediaDelivery.button}
             </a>
           </div>
         </div>
@@ -43,12 +44,10 @@ const JadeMediaDelivery = () => {
         <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
           <div className="lg:w-1/2 order-2 lg:order-1 mt-6 lg:mt-0">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Explore insights you can use
+              {t.jadeMediaDelivery.explore}
             </h2>
             <p className="text-gray-700 mb-6">
-              Analyze sales, access financials, respond to reviews, and check
-              out customer insights including zip codes for delivery. Log on to
-              the Merchant Portal or use the Business Manager App on your phone.
+              {t.jadeMediaDelivery.exploreText}
             </p>
           </div>
           <div className="lg:w-1/2 order-1 lg:order-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import {
@@ -10,6 +10,8 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card"; // Import shadcn/ui Card components
+import { translations } from "@/public/language/language";
+import { LanguageContext } from "@/lib/LanguageContext";
 
 const InitiativesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,6 +28,9 @@ const InitiativesSection = () => {
     },
   });
 
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
+
   const initiatives = [
     {
       image: "/womanTab.jpg",
@@ -33,6 +38,11 @@ const InitiativesSection = () => {
       description:
         "We’ve teamed up with companies like 7shifts and Edgap to offer custom discounts on valuable services.",
       cta: "Benefits & discounts",
+      title_fr:
+        "Avantages en matière de soins de santé, de recrutement et de formation",
+      description_fr:
+        "Nous nous sommes associés à des entreprises comme 7shifts et Edgap pour offrir des réductions personnalisées sur des services précieux.",
+      cta_fr: "Avantages & réductions",
     },
     {
       image: "/chef.jpg",
@@ -40,6 +50,10 @@ const InitiativesSection = () => {
       description:
         "The Chief Restaurant Advisor regularly meets with Jade Media Delivery leaders, employees, and local restaurateurs, hosting industry roundtables, attending strategy meetings, and providing feedback on products and services.",
       cta: "About Mitchell Stark",
+      title_fr: "Conseiller principal en restauration",
+      description_fr:
+        "Le Conseiller principal en restauration rencontre régulièrement les leaders de Jade Media Delivery, les employés et les restaurateurs locaux, organisant des tables rondes industrielles, assistant à des réunions stratégiques et fournissant des retours sur les produits et services.",
+      cta_fr: "À propos de Mitchell Stark",
     },
     {
       image: "/manTable.jpg",
@@ -47,18 +61,20 @@ const InitiativesSection = () => {
       description:
         "We aim to reduce the financial burden on small businesses following a natural disaster with access to $10,000 grants, helping keep their doors open.",
       cta: "Apply NOW",
+      title_fr: "Fonds de secours en cas de catastrophe",
+      description_fr:
+        "Nous visons à réduire le fardeau financier des petites entreprises après une catastrophe naturelle en offrant un accès à des subventions de 10 000 $, les aidant à maintenir leurs portes ouvertes.",
+      cta_fr: "Postuler MAINTENANT",
     },
   ];
-
   return (
     <div className="bg-white px-4 md:px-12">
       <div className="bg-blue-800 p-8 rounded-md">
         <h2 className="text-3xl font-bold text-center text-white mb-8">
-          Access opportunity, capital, and community
+          {t.initiativeSection.mainTitle}
         </h2>
         <p className="text-center text-white mb-12">
-          We’ve developed a number of initiatives to support you and the causes
-          you care about.
+          {t.initiativeSection.mainDescription}
         </p>
 
         {/* Desktop Layout (Grid) */}
@@ -75,15 +91,17 @@ const InitiativesSection = () => {
               />
               <CardHeader className="p-2">
                 <CardTitle className="text-xl font-semibold">
-                  {initiative.title}
+                  {language == "en" ? initiative.title : initiative.title_fr}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-2">
                 <CardDescription className="text-gray-600 mb-6">
-                  {initiative.description}
+                  {language == "en"
+                    ? initiative.description
+                    : initiative.description_fr}
                 </CardDescription>
                 <button className="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                  {initiative.cta}
+                  {language == "en" ? initiative.cta : initiative.cta_fr}
                 </button>
               </CardContent>
             </Card>

@@ -60,7 +60,7 @@ const Footer = () => {
       href: "#",
     },
   ];
-  const { language } = useContext(LanguageContext);
+  const { language, setLanguage } = useContext(LanguageContext);
   const t = translations[language];
   const scrollToTop = () => {};
   return (
@@ -176,7 +176,12 @@ const Footer = () => {
           {/* Language Selector and Legal Links */}
           <div className="mt-8 pt-8 border-t border-gray-700">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
-              <Select value={language == "en" ? "en-CA" : "fr-CA"}>
+              <Select
+                onValueChange={(value) => {
+                  setLanguage(value);
+                }}
+                value={language == "en" ? "en" : "fr"}
+              >
                 <SelectTrigger className="w-[180px] bg-blue-800 text-white border-gray-700">
                   <SelectValue
                     placeholder={
@@ -185,8 +190,8 @@ const Footer = () => {
                   />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en-CA">English (CA)</SelectItem>
-                  <SelectItem value="fr-CA">French(CA)</SelectItem>
+                  <SelectItem value="en">English (CA)</SelectItem>
+                  <SelectItem value="fr">French(CA)</SelectItem>
                 </SelectContent>
               </Select>
 

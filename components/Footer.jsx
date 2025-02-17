@@ -62,6 +62,9 @@ const Footer = () => {
   ];
   const { language } = useContext(LanguageContext);
   const t = translations[language];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <footer className="w-full">
       {/* Top Banner */}
@@ -70,7 +73,11 @@ const Footer = () => {
           <span>{t.footer.name}</span>
           <span className="ml-1 text-sm">{t.footer.forMerchants}</span>
         </div>
-        <Link href="#" className="text-white hidden md:block  hover:underline">
+        <Link
+          href="#"
+          onClick={scrollToTop()}
+          className="text-white hidden md:block  hover:underline"
+        >
           {t.footer.becomePartner}
         </Link>
       </div>

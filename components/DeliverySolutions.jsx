@@ -119,8 +119,7 @@ const DeliverySolutions = () => {
               >
                 <div className="mr-2">{solution.icon}</div>
                 <p className="text-sm font-medium text-gray-800">
-                  {language == "en" ? solution.label : solution.labelFr}{" "}
-                  {solution.label}
+                  {language == "en" ? solution.label : solution.labelFr}
                 </p>
               </div>
             ))}

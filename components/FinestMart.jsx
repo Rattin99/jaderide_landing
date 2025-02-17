@@ -85,8 +85,8 @@ const FinestMart = () => {
     <div className="w-full h-full   p-10 md:p-40">
       <div className="flex flex-col md:flex-row items-center">
         {/* Hero Image Section */}
-        <div className="w-full md:w-1/3 mb-16 flex flex-col justify-center items-center">
-          <h2 className="text-2xl md:text-xl w-full font-bold  md:text-start text-center">
+        <div className="w-full lg:w-1/3 mb-16 flex flex-col justify-center items-center">
+          <h2 className="text-2xl lg:text-xl w-full font-bold  lg:text-start text-center">
             {t.finestMart.title}
           </h2>
           {/* Flex container for images */}
@@ -105,7 +105,7 @@ const FinestMart = () => {
         </div>
 
         {/* Features Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:w-2/3">
+        <div className="hidden lg:grid grid-cols-1  lg:grid-cols-3 gap-6 ">
           {features.map((feature, index) => (
             <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">
@@ -125,7 +125,7 @@ const FinestMart = () => {
       </div>
 
       {/* Features Carousel - Mobile */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <div ref={sliderRef} className="keen-slider">
           {features.map((feature, index) => (
             <div key={index} className="keen-slider__slide">

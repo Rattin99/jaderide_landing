@@ -105,7 +105,7 @@ const FinestMart = () => {
         </div>
 
         {/* Features Grid - Desktop */}
-        <div className="hidden lg:grid grid-cols-1  lg:grid-cols-3 gap-6 ">
+        <div className="hidden lg:grid w-2/3 grid-cols-1  lg:grid-cols-3 gap-6 ">
           {features.map((feature, index) => (
             <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">

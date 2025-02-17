@@ -70,7 +70,7 @@ export default function StepsSection() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-10">
       {/* Section Heading */}
-      <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
+      <h2 className="mb-8 text-center text-2xl text-gray-700 font-semibold sm:text-3xl">
         {t.stepsSection.title}
       </h2>
 
@@ -89,7 +89,7 @@ export default function StepsSection() {
                 className="object-contain"
               />
             </div>
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-lg ">
               {language == "en" ? step.title : step.title_fr}
             </h3>
             <p className="text-sm text-muted-foreground">

@@ -32,7 +32,7 @@ const QuizSection = () => {
       <div className="flex flex-col md:flex-row md:gap-12 lg:gap-24">
         {/* Text Section */}
         <div className="mb-8 md:mb-0 md:w-1/3">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <h1 className="text-2xl md:text-3xl text-gray-700 font-semibold  mb-4">
             {t.quizSection.title}
           </h1>
           <p className="text-lg text-gray-700 mb-2">{t.quizSection.subtitle}</p>

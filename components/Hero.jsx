@@ -134,9 +134,10 @@ export default function Hero() {
       <Dialog open={showWelcomeModal} onOpenChange={setShowWelcomeModal}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle className="text-green-600 flex w-full justify-center items-center">
-              <CircleCheck color="green" size={64} />
+            <DialogTitle className="text-blue-800 flex w-full justify-center items-center">
+              {t.welcomeModal.title}
             </DialogTitle>
+            <DialogDescription>{t.welcomeModal.description}</DialogDescription>
           </DialogHeader>
           <DialogFooter>
             <Button
@@ -158,7 +159,7 @@ export default function Hero() {
           <div className="flex flex-col w-full lg:flex-row items-center lg:items-end lg:justify-end">
             <div className="lg:w-1/2"></div>
             <div className="lg:w-2/5 bg-white p-8 rounded-lg shadow-md">
-              <h1 className="text-xl py-2 font-bold text-black mb-6">
+              <h1 className="text-xl py-2 text-gray-700 font-semibold mb-6">
                 {t.heroSection.title}
               </h1>
               <form

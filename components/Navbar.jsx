@@ -15,7 +15,7 @@ export default function Navbar() {
   const t = translations[language];
 
   return (
-    <nav className=" relative bg-white shadow-md z-20">
+    <nav className="fixed w-full bg-white shadow-md z-20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">

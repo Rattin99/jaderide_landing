@@ -36,7 +36,7 @@ export const translations = {
     welcomeModal: {
       title: "Welcome to JMD!",
       description:
-        "Thank you for joining us, {{name}}! We're excited to have you on board!",
+        "Thank you for joining us! We're excited to have you on board!",
       closeButton: "Close",
     },
     heroSection: {
@@ -166,7 +166,7 @@ export const translations = {
     welcomeModal: {
       title: "Bienvenue chez JMD !",
       description:
-        "Merci de nous avoir rejoint, {{name}} ! Nous sommes ravis de vous compter parmi nous !",
+        "Merci de nous avoir rejoint! Nous sommes ravis de vous compter parmi nous !",
       closeButton: "Fermer",
     },
     heroSection: {

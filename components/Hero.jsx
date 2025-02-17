@@ -62,6 +62,7 @@ export default function Hero() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm({ resolver: zodResolver(formSchema) });
 
@@ -115,6 +116,7 @@ export default function Hero() {
         console.log("Email sent successfully!");
         setSubmittedName(formData.firstName);
         setShowWelcomeModal(true);
+        reset();
       } else {
         console.error("Email sending failed.");
       }

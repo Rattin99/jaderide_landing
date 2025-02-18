@@ -153,7 +153,7 @@ export default function Hero() {
       <div className="py-20 relative">
         <img
           src="hero.jpg"
-          className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[900px] z-0"
+          className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[720px] z-0"
         />
         <div className="container relative w-full mx-auto px-4 z-10">
           <div className="flex flex-col w-full mt-28 lg:flex-row items-center lg:items-end lg:justify-end">

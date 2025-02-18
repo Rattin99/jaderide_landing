@@ -121,7 +121,7 @@ export const translations = {
         "We've developed a number of initiatives to support you and the causes you care about.",
     },
     footer: {
-      name: "Logo Jade Media Delivery",
+      name: "Jade Media Delivery",
       forMerchants: "for Merchants",
       becomePartner: "Become a Partner",
       products: "PRODUCTS",
@@ -253,7 +253,7 @@ export const translations = {
         "Nous avons développé plusieurs initiatives pour vous soutenir et soutenir les causes qui vous tiennent à cœur.",
     },
     footer: {
-      name: "Logo Jade Media Delivery",
+      name: "Jade Media Delivery",
       forMerchants: "pour les commerçants",
       becomePartner: "Devenir partenaire",
       products: "PRODUITS",

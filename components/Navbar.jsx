@@ -19,8 +19,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Home className="h-6 w-6 mr-2" />
-            <span className="font-bold text-xl">Logo</span>
+            <img src="logo.png" />
           </div>
           <div className="hidden lg:flex items-center space-x-5 lg:space-x-16">
             <a href="#" className="text-gray-700 hover:text-blue-800">

@@ -87,18 +87,25 @@ const FinestMart = () => {
       <div className="flex flex-col md:flex-row items-center">
         {/* Hero Image Section */}
         <div className="w-full lg:w-1/3 mb-16 flex flex-col justify-center items-center">
-          <h2 className="text-2xl lg:text-xl w-full text-gray-700 font-semibold  lg:text-start text-center">
-            {t.finestMart.title}
-          </h2>
+          {language == "en" && (
+            <h2 className="text-2xl lg:text-3xl w-full text-gray-700 font-semibold  lg:text-start text-center">
+              {t.finestMart.title}
+            </h2>
+          )}
+          {language == "fr" && (
+            <h2 className="text-2xl lg:text-xl w-full text-gray-700 font-semibold  lg:text-start text-center">
+              {t.finestMart.title}
+            </h2>
+          )}
           {/* Flex container for images */}
           <div className="">
             <img
-              src="merged.png"
+              src="imgs.png"
               alt="Delivery Service Interface"
-              className="rounded-lg md:w-full md:block hidden h-auto shadow-none"
+              className=" md:w-full md:block hidden h-auto shadow-none"
             />
             <img
-              src="merged_1.png"
+              src="imgs.png"
               alt="Delivery Service Interface"
               className="rounded-lg md:w-full md:hidden h-auto"
             />

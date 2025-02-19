@@ -2,27 +2,27 @@
 import { LanguageContext } from "@/lib/LanguageContext";
 import { translations } from "@/public/language/language";
 import {
-  Truck,
+  Coffee,
+  PawPrint,
   ShoppingCart,
-  Wine,
   Store,
   Flower,
-  PawPrint,
-  ShoppingBag,
   HeartPulse,
   Gift,
-  BatteryCharging,
+  Cake,
+  BookOpen,
 } from "lucide-react";
 import { useContext } from "react";
 
 const DeliverySolutions = () => {
   const { language } = useContext(LanguageContext);
   const t = translations[language];
+
   const solutions = [
     {
-      icon: <Truck className="w-5 h-5 text-blue-800" />,
-      label: "Restaurant",
-      labelFr: "Restaurant",
+      icon: <Coffee className="w-5 h-5 text-blue-800" />,
+      label: "Coffee Shop",
+      labelFr: "Café",
     },
     {
       icon: <ShoppingCart className="w-5 h-5 text-blue-800" />,
@@ -30,29 +30,9 @@ const DeliverySolutions = () => {
       labelFr: "Épicerie",
     },
     {
-      icon: <Wine className="w-5 h-5 text-blue-800" />,
-      label: "Alcohol Store",
-      labelFr: "Magasin d'alcool",
-    },
-    {
       icon: <Store className="w-5 h-5 text-blue-800" />,
       label: "Retail Store",
       labelFr: "Magasin de détail",
-    },
-    {
-      icon: <Flower className="w-5 h-5 text-blue-800" />,
-      label: "Flower Store",
-      labelFr: "Fleuriste",
-    },
-    {
-      icon: <PawPrint className="w-5 h-5 text-blue-800" />,
-      label: "Pet shop",
-      labelFr: "Animalerie",
-    },
-    {
-      icon: <ShoppingBag className="w-5 h-5 text-blue-800" />,
-      label: "Convenience",
-      labelFr: "Dépanneur",
     },
     {
       icon: <HeartPulse className="w-5 h-5 text-blue-800" />,
@@ -60,14 +40,29 @@ const DeliverySolutions = () => {
       labelFr: "Pharmacie",
     },
     {
-      icon: <BatteryCharging className="w-5 h-5 text-blue-800" />,
-      label: "Batteries",
-      labelFr: "Batteries",
+      icon: <Flower className="w-5 h-5 text-blue-800" />,
+      label: "Flower Shop",
+      labelFr: "Fleuriste",
+    },
+    {
+      icon: <PawPrint className="w-5 h-5 text-blue-800" />,
+      label: "Pet Store",
+      labelFr: "Animalerie",
+    },
+    {
+      icon: <Cake className="w-5 h-5 text-blue-800" />,
+      label: "Bakery & Pastry Shop",
+      labelFr: "Boulangerie & Pâtisserie",
+    },
+    {
+      icon: <BookOpen className="w-5 h-5 text-blue-800" />,
+      label: "Bookstore",
+      labelFr: "Librairie",
     },
     {
       icon: <Gift className="w-5 h-5 text-blue-800" />,
-      label: "Gifts",
-      labelFr: "Cadeaux",
+      label: "Gift Shop",
+      labelFr: "Boutique de cadeaux",
     },
   ];
 

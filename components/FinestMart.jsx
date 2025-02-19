@@ -2,12 +2,12 @@
 import React, { useContext, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Shield,
-  Users,
-  Clock,
+  Currency,
+  Trophy,
+  TrendingUp,
+  Calendar,
+  Database,
   Megaphone,
-  HeadphonesIcon,
-  Settings,
 } from "lucide-react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -16,57 +16,58 @@ import { translations } from "@/public/language/language";
 
 const features = [
   {
-    icon: Shield,
-    title: "A trusted delivery partner.",
-    titleFr: "Un partenaire de livraison de confiance.",
+    icon: Currency,
+    title: "Cost Efficiency",
+    titleFr: "Efficacité des coûts",
     description:
-      "Over 10 years of experience delivering goods to Canadians across the country.",
+      "Avoid high commissions charged by third-party delivery services. Set your own service or delivery fees.",
     descriptionFr:
-      "Plus de 10 ans d'expérience dans la livraison de marchandises aux Canadiens à travers le pays.",
+      "Évitez les commissions élevées des services de livraison tiers. Définissez vos propres frais de service ou de livraison.",
   },
   {
-    icon: Users,
-    title: "1 in 4 Canadians order with JMD",
-    titleFr: "1 Canadien sur 4 commande avec JMD",
+    icon: Trophy,
+    title: "Competitive Advantage",
+    titleFr: "Avantage concurrentiel",
     description:
-      "Over 10 years of experience delivering goods to Canadians across the country.",
+      "You do not compete with all these other businesses that are on these third-party services.",
     descriptionFr:
-      "Plus de 10 ans d'expérience dans la livraison de marchandises aux Canadiens à travers le pays.",
+      "Vous ne rivalisez pas avec toutes les autres entreprises présentes sur ces services tiers.",
   },
   {
-    icon: Clock,
-    title: "30-minute average delivery time.",
-    titleFr: "Temps de livraison moyen de 30 minutes.",
+    icon: TrendingUp,
+    title: "Increased Revenue",
+    titleFr: "Augmentation des revenus",
     description:
-      "Seamless delivery of your product to a customer's door in their moment of need.",
+      "Promote additional items during the ordering process. Receive payments directly without waiting for third-party settlements.",
     descriptionFr:
-      "Livraison fluide de votre produit à la porte d'un client au moment où il en a besoin.",
+      "Promouvez des articles supplémentaires lors du processus de commande. Recevez les paiements directement sans attendre les règlements des tiers.",
+  },
+  {
+    icon: Calendar,
+    title: "Operational Flexibility",
+    titleFr: "Flexibilité opérationnelle",
+    description:
+      "Define your own delivery areas and times. Better manage delivery staff schedules and performance.",
+    descriptionFr:
+      "Définissez vos propres zones et horaires de livraison. Gérez mieux les plannings et la performance de votre personnel de livraison.",
   },
   {
     icon: Megaphone,
-    title: "Amplify your reach.",
-    titleFr: "Amplifiez votre portée.",
+    title: "Marketing Opportunities",
+    titleFr: "Opportunités marketing",
     description:
-      "Join over 50k other JMD partners attracting new customers from a pool of 5.3+ million Canadians in more than 190 delivery zones across the country.",
+      "Use push notifications to inform customers about new dishes, menu changes, or promotions.",
     descriptionFr:
-      "Rejoignez plus de 50 000 autres partenaires JMD attirant de nouveaux clients parmi plus de 5,3 millions de Canadiens dans plus de 190 zones de livraison à travers le pays.",
+      "Utilisez les notifications push pour informer les clients des nouveaux plats, des changements de menu ou des promotions.",
   },
   {
-    icon: HeadphonesIcon,
-    title: "Account support when you need it",
-    titleFr: "Support de compte quand vous en avez besoin.",
-    description: "A dedicated team of experts to support all your needs.",
-    descriptionFr:
-      "Une équipe dédiée d'experts pour répondre à tous vos besoins.",
-  },
-  {
-    icon: Settings,
-    title: "Self-serve management tools.",
-    titleFr: "Outils de gestion en libre-service.",
+    icon: Database,
+    title: "Data Ownership",
+    titleFr: "Propriété des données",
     description:
-      "Confidently manage and grow your business with a wide range of powerful marketing tools and customer insights at your disposal.",
+      "Access valuable customer data to implement loyalty programs that will encourage repeat business.",
     descriptionFr:
-      "Gérez et développez votre entreprise en toute confiance avec une large gamme d'outils marketing puissants et d'analyses clients à votre disposition.",
+      "Accédez à des données clients précieuses pour mettre en place des programmes de fidélité qui encouragent la récurrence des achats.",
   },
 ];
 const FinestMart = () => {

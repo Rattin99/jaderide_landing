@@ -306,7 +306,7 @@ export default function Hero() {
                     <input
                       {...register("phone")}
                       type={t.form.phonePlaceholder}
-                      placeholder="+1 0020"
+                      placeholder="telephone"
                       className="p-3 border border-gray-300 rounded-md"
                     />
                     {errors.phone && (

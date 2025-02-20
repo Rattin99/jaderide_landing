@@ -11,6 +11,7 @@ import {
   Gift,
   Cake,
   BookOpen,
+  Salad,
 } from "lucide-react";
 import { useContext } from "react";
 
@@ -19,6 +20,11 @@ const DeliverySolutions = () => {
   const t = translations[language];
 
   const solutions = [
+    {
+      icon: <Salad className="w-5 h-5 text-blue-800" />,
+      label: "Restaurants",
+      labelFr: "Restaurants",
+    },
     {
       icon: <Coffee className="w-5 h-5 text-blue-800" />,
       label: "Coffee Shop",

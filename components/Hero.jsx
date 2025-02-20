@@ -156,7 +156,7 @@ export default function Hero() {
           className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[1000px] z-0"
         />
         <div className="container relative w-full mx-auto px-4 z-10">
-          <div className="flex flex-col w-full mt-28 lg:flex-row items-center lg:items-end lg:justify-end">
+          <div className="flex flex-col w-full mt-12 lg:flex-row items-center lg:items-end lg:justify-end">
             <div className="lg:w-1/2"></div>
             <div className="lg:w-2/5 bg-white p-8 rounded-lg shadow-md">
               <h1 className="text-xl py-2 text-gray-700 font-semibold mb-6">

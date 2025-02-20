@@ -87,7 +87,7 @@ const DeliverySolutions = () => {
               className="flex justify-center items-center py-2 px-10 bg-white rounded-lg shadow-sm"
             >
               <div className="mr-2">{solution.icon}</div>
-              <p className="text-sm  text-nowrap text-center text-gray-800">
+              <p className="text-sm  text-wrap text-center text-gray-800">
                 {language == "en" ? solution.label : solution.labelFr}
               </p>
             </div>

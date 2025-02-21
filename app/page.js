@@ -21,10 +21,11 @@ export default function Home() {
       <DeliverySolutions />
       <DeliverSections />
       <StepsSection />
-      <QuizSection />
-      <CommitmentSection />
+      {/*      <QuizSection /> */}
+      {/* <CommitmentSection />
+       */}
       <JadeMediaDelivery />
-      <InitiativesSection />
+      {/*       <InitiativesSection /> */}
       <FAQSection />
       <Footer />
     </div>

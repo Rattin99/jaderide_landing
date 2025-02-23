@@ -83,19 +83,19 @@ const FinestMart = () => {
   const t = translations[language];
 
   return (
-    <div className="w-full h-full   p-10 md:p-40">
-      <div className="flex flex-col md:flex-row items-center">
+    <div className="w-full h-full md:py-40 py-10">
+      <div className="flex flex-col h-full md:flex-row items-center">
         {/* Hero Image Section */}
-        <div className="w-full lg:w-1/3 mb-16 flex flex-col justify-center items-center">
-          <h2 className="text-2xl lg:text-xl w-full text-gray-700 font-semibold  lg:text-start text-center">
+        <div className="w-full h-full lg:w-1/3 mb-16 flex flex-col justify-center items-center">
+          <h2 className="text-2xl lg:text-xl w-full text-gray-700 font-semibold lg:text-start text-center mb-6">
             {t.finestMart.title}
           </h2>
           {/* Flex container for images */}
-          <div className="">
+          <div className="flex justify-center items-center w-full">
             <img
-              src="imgs.png"
+              src="imgs2.png"
               alt="Delivery Service Interface"
-              className=" md:w-full md:block hidden h-auto shadow-none"
+              className="md:w-full md:flex hidden h-auto shadow-none"
             />
             <img
               src="imgs.png"
@@ -104,9 +104,8 @@ const FinestMart = () => {
             />
           </div>
         </div>
-
         {/* Features Grid - Desktop */}
-        <div className="hidden lg:grid w-2/3 grid-cols-1  lg:grid-cols-3 gap-6 ">
+        <div className="hidden lg:grid w-2/3 grid-cols-1 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card key={index} className="w-15 h-15 border-none shadow-none">
               <CardContent className="p-6">
@@ -124,7 +123,6 @@ const FinestMart = () => {
           ))}
         </div>
       </div>
-
       {/* Features Carousel - Mobile */}
       <div className="lg:hidden">
         <div ref={sliderRef} className="keen-slider">
@@ -133,7 +131,7 @@ const FinestMart = () => {
               <Card className="border-none shadow-none">
                 <CardContent className="p-6 flex flex-col justify-center items-center text-center">
                   {React.createElement(feature.icon, {
-                    className: "w-6 h-6  text-blue-800 mb-4",
+                    className: "w-6 h-6 text-blue-800 mb-4",
                   })}
                   <h3 className="font-semibold mb-2">
                     {language == "en" ? feature.title : feature.titleFr}

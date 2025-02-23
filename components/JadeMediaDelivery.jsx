@@ -17,24 +17,24 @@ const JadeMediaDelivery = () => {
               <Image
                 src="/image.jpg"
                 alt="Jade Media Delivery"
-                width={600}
-                height={400}
+                width={700}
+                height={500}
                 className="rounded-lg shadow-lg object-cover object-center"
               />
             </div>
             <div className=" lg:w-1/2 lg:h-3/4 mx-10 my-5 lg:my-0 p-10 rounded-md bg-white ">
-              <h2 className="text-5xl font-semibold text-gray-700  mb-6">
+              <h2 className="text-3xl font-semibold text-gray-700  mb-6">
                 {t.jadeMediaDelivery.title}
               </h2>
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-6">
                 {t.jadeMediaDelivery.description.part1}
               </p>
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="text-lg text-gray-700 mb-6">
                 {t.jadeMediaDelivery.description.part2}
               </p>
               <a
                 href="#"
-                className="inline-block bg-blue-800 text-2xl text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                className="inline-block bg-blue-800 text-xl text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 {t.jadeMediaDelivery.button}
               </a>

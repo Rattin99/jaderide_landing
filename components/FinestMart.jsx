@@ -83,7 +83,7 @@ const FinestMart = () => {
   const t = translations[language];
 
   return (
-    <div className="w-full h-full md:py-40 py-10">
+    <div className="w-full h-full p-4 md:px-16 md:py-40 py-10">
       <div className="flex flex-col h-full md:flex-row items-center">
         {/* Hero Image Section */}
         <div className="w-full h-full lg:w-1/3 mb-16 flex flex-col justify-center items-center">
@@ -93,9 +93,9 @@ const FinestMart = () => {
           {/* Flex container for images */}
           <div className="flex justify-center items-center w-full">
             <img
-              src="imgs2.png"
+              src="imaged.png"
               alt="Delivery Service Interface"
-              className="md:w-full md:flex hidden h-auto shadow-none"
+              className="md:w-full md:flex hidden h-auto"
             />
             <img
               src="imgs.png"

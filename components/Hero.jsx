@@ -153,13 +153,13 @@ export default function Hero() {
       <div className="py-20 relative">
         {language == "en" && (
           <img
-            src="hero.png"
+            src="jadeorder/hero.png"
             className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[1000px] z-0"
           />
         )}
         {language == "fr" && (
           <img
-            src="hero_fr.png"
+            src="jadeorder/hero_fr.png"
             className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[1000px] z-0"
           />
         )}

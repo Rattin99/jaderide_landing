@@ -93,12 +93,12 @@ const FinestMart = () => {
           {/* Flex container for images */}
           <div className="flex justify-center items-center w-full">
             <img
-              src="imaged.png"
+              src="jadeorder/imaged.png"
               alt="Delivery Service Interface"
               className="md:w-full md:flex hidden h-auto"
             />
             <img
-              src="imgs.png"
+              src="jadeorder/imgs.png"
               alt="Delivery Service Interface"
               className="rounded-lg md:w-full md:hidden h-auto"
             />

@@ -8,7 +8,7 @@ import { translations } from "@/public/language/language";
 const options = [
   {
     id: 1,
-    image: "/gain.png",
+    image: "jadeorder/gain.png",
     title: "Gain the most new customers and new orders.",
     title_fr: "Gagnez le plus de nouveaux clients et de nouvelles commandes.",
   },

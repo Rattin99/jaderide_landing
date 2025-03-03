@@ -86,7 +86,7 @@ const Footer = () => {
           {/* Desktop Layout */}
           <div className="hidden lg:grid lg:grid-cols-4 lg:gap-8 mb-8">
             <div>
-              <img src="jadeorder/logo.png" />
+              <img src="/jadeorder/logo.png" />
             </div>
             <div>
               <h2 className="text-lg font-bold mb-4">{t.footer.products}</h2>
@@ -131,7 +131,7 @@ const Footer = () => {
           {/* Mobile Layout */}
           <div className="lg:hidden space-y-4">
             <div className="flex flex-col space-y-4">
-              <img src="jadeorder/logo.png" className="max-w-16" />
+              <img src="/jadeorder/logo.png" className="max-w-16" />
               <div className="flex space-x-4">
                 <Link href="#" className="text-white">
                   <svg

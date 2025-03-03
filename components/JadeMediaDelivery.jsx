@@ -15,7 +15,7 @@ const JadeMediaDelivery = () => {
           <div className="flex flex-col lg:flex-row items-center  mb-12">
             <div className="lg:w-1/2 flex justify-center md:w-[600px] md:h-[400px] w-[300px] h-[200px] overflow-hidden">
               <Image
-                src="jadeorder/image.jpg"
+                src="/jadeorder/image.jpg"
                 alt="Jade Media Delivery"
                 width={700}
                 height={500}
@@ -54,7 +54,7 @@ const JadeMediaDelivery = () => {
             </div>
             <div className="lg:w-1/2 order-1 lg:order-2">
               <Image
-                src="jadeorder/dashboard.png"
+                src="/jadeorder/dashboard.png"
                 alt="Dashboard Insights"
                 width={600}
                 height={400}

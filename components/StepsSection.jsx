@@ -19,7 +19,7 @@ export default function StepsSection() {
       title_fr: "Soumettre le formulaire",
       description_fr:
         "Remplissez le formulaire bref et quelqu'un de notre équipe vous contactera dans les 1-2 jours ouvrables.",
-      image: "jadeorder/girl.png",
+      image: "/jadeorder/girl.png",
     },
     {
       title: "Chat with our team",
@@ -28,7 +28,7 @@ export default function StepsSection() {
       title_fr: "Discutez avec notre équipe",
       description_fr:
         "Notre équipe d'experts discutera de la meilleure option pour rejoindre le réseau JMD.",
-      image: "jadeorder/boy.png",
+      image: "/jadeorder/boy.png",
     },
     {
       title: "Onboarding",
@@ -37,7 +37,7 @@ export default function StepsSection() {
       title_fr: "Intégration",
       description_fr:
         "Configurez votre tablette et vos coordonnées bancaires avec nos instructions étape par étape et un parcours d'intégration interactif.",
-      image: "jadeorder/bank.png",
+      image: "/jadeorder/bank.png",
     },
     {
       title: "Build your product catalogue",
@@ -46,7 +46,7 @@ export default function StepsSection() {
       title_fr: "Créez votre catalogue de produits",
       description_fr:
         "Notre plateforme marchande intuitive rend la mise en ligne de votre offre de produits rapide et facile.",
-      image: "jadeorder/clipboard.png",
+      image: "/jadeorder/clipboard.png",
     },
     {
       title: "Start making money",
@@ -55,7 +55,7 @@ export default function StepsSection() {
       title_fr: "Commencez à gagner de l'argent",
       description_fr:
         "Accédez à des revenus inexploités provenant de centaines de clients à la recherche de la commodité de la livraison à travers le Canada.",
-      image: "jadeorder/Earn.png",
+      image: "/jadeorder/Earn.png",
     },
   ];
   // Keen-slider state

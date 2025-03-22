@@ -13,13 +13,13 @@ const JadeMediaDelivery = () => {
         {/* Section 1: Get the most out of Jade Media Delivery */}
         <div className="w-full lg:py-20 py-5 bg-blue-800 rounded-md">
           <div className="flex flex-col lg:flex-row items-center  mb-12">
-            <div className="lg:w-1/2 flex justify-center md:w-[600px] md:h-[400px] w-[300px] h-[200px] overflow-hidden">
+            <div className="lg:w-1/2  flex justify-center md:w-[600px] md:h-[400px] w-[300px] h-[200px] overflow-hidden">
               <Image
                 src="/jadeorder/image.jpg"
                 alt="Jade Media Delivery"
-                width={700}
+                width={600}
                 height={500}
-                className="rounded-lg shadow-lg object-cover object-center"
+                className="rounded-lg ml-10 shadow-lg object-cover object-center overflow-hidden"
               />
             </div>
             <div className=" lg:w-1/2 lg:h-3/4 mx-10 my-5 lg:my-0 p-10 rounded-md bg-white ">

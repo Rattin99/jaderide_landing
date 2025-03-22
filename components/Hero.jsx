@@ -175,160 +175,212 @@ export default function Hero() {
                 onSubmit={handleSubmit(formSubmitHandler)}
               >
                 <div className="space-y-4 md:space-y-8">
-                  <input
-                    {...register("businessName")}
-                    placeholder={t.form.businessNamePlaceholder}
-                    className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700 w-full"
-                  />
-                  {errors.businessName && (
-                    <p className="text-red-500">
-                      {errors.businessName.message}
-                    </p>
-                  )}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-                    <select
-                      {...register("businessType")}
-                      className="p-3 border border-gray-300 bg-white rounded-md text-gray-700"
-                    >
-                      <option value="">{t.form.businessTypePlaceholder}</option>
-                      <option value="Restaurant or Coffee shop">
-                        {t.form.businessTypes.restaurant}
-                      </option>
-                      <option value="Grocery Store">
-                        {t.form.businessTypes.grocery}
-                      </option>
-                      <option value="Retail Store">
-                        {t.form.businessTypes.retail}
-                      </option>
-                      <option value="Pharmacy">
-                        {t.form.businessTypes.pharmacy}
-                      </option>
-                      <option value="Flower Shop">
-                        {t.form.businessTypes.flowerShop}
-                      </option>
-                      <option value="Pet Store">
-                        {t.form.businessTypes.petStore}
-                      </option>
-                      <option value="Bakery or Pastry shop">
-                        {t.form.businessTypes.bakery}
-                      </option>
-                      <option value="Courier and Logistics Services">
-                        {t.form.businessTypes.courier}
-                      </option>
-                      <option value="Bookstore">
-                        {t.form.businessTypes.bookstore}
-                      </option>
-                      <option value="Other">
-                        {t.form.businessTypes.other}
-                      </option>
-                    </select>
-                    {errors.businessType && (
-                      <p className="text-red-500">
-                        {errors.businessType.message}
+                  <div className="flex flex-col">
+                    <input
+                      {...register("businessName")}
+                      placeholder={t.form.businessNamePlaceholder}
+                      className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700 w-full"
+                    />
+                    {errors.businessName && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {language === "fr"
+                          ? "Nom d'entreprise requis"
+                          : errors.businessName.message}
                       </p>
                     )}
-                    <select
-                      {...register("locations")}
-                      className="p-3 border border-gray-300 bg-white rounded-md text-gray-700"
-                    >
-                      <option value="">{t.form.locationsPlaceholder}</option>
-                      <option value="1-5">1-5</option>
-                      <option value="6-10">6-10</option>
-                      <option value="11-24">11-24</option>
-                      <option value="25-50">25-50</option>
-                      <option value="50+">Over 50</option>
-                    </select>
-                    {errors.locations && (
-                      <p className="text-red-500">{errors.locations.message}</p>
-                    )}
                   </div>
-                  <PlacesAutocomplete
-                    value={address}
-                    onChange={handleChange}
-                    onSelect={handleSelect}
-                    searchOptions={searchOptions}
-                  >
-                    {({
-                      getInputProps,
-                      suggestions,
-                      getSuggestionItemProps,
-                      loading,
-                    }) => (
-                      <div>
-                        <input
-                          {...getInputProps({
-                            placeholder: t.form.addressPlaceholder,
-                            className:
-                              "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black",
-                          })}
-                        />
-                        <div className="bg-white rounded-md mt-1 shadow-lg">
-                          {loading && (
-                            <div className="p-2 text-gray-500">
-                              {t.form.loading}
-                            </div>
-                          )}
-                          {suggestions.map((suggestion) =>
-                            renderSuggestion(
-                              suggestion,
-                              getSuggestionItemProps,
-                            ),
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                    <div className="flex flex-col">
+                      <select
+                        {...register("businessType")}
+                        className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
+                      >
+                        <option value="">
+                          {t.form.businessTypePlaceholder}
+                        </option>
+                        <option value="Restaurant or Coffee shop">
+                          {t.form.businessTypes.restaurant}
+                        </option>
+                        <option value="Grocery Store">
+                          {t.form.businessTypes.grocery}
+                        </option>
+                        <option value="Retail Store">
+                          {t.form.businessTypes.retail}
+                        </option>
+                        <option value="Pharmacy">
+                          {t.form.businessTypes.pharmacy}
+                        </option>
+                        <option value="Flower Shop">
+                          {t.form.businessTypes.flowerShop}
+                        </option>
+                        <option value="Pet Store">
+                          {t.form.businessTypes.petStore}
+                        </option>
+                        <option value="Bakery or Pastry shop">
+                          {t.form.businessTypes.bakery}
+                        </option>
+                        <option value="Courier and Logistics Services">
+                          {t.form.businessTypes.courier}
+                        </option>
+                        <option value="Bookstore">
+                          {t.form.businessTypes.bookstore}
+                        </option>
+                        <option value="Other">
+                          {t.form.businessTypes.other}
+                        </option>
+                      </select>
+                      {errors.businessType && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Type d'entreprise requis"
+                            : errors.businessType.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col">
+                      <select
+                        {...register("locations")}
+                        className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
+                      >
+                        <option value="">{t.form.locationsPlaceholder}</option>
+                        <option value="1-5">1-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11-24">11-24</option>
+                        <option value="25-50">25-50</option>
+                        <option value="50+">Over 50</option>
+                      </select>
+                      {errors.locations && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Nombre de localisations requis"
+                            : errors.locations.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col">
+                    <PlacesAutocomplete
+                      value={address}
+                      onChange={handleChange}
+                      onSelect={handleSelect}
+                      searchOptions={searchOptions}
+                    >
+                      {({
+                        getInputProps,
+                        suggestions,
+                        getSuggestionItemProps,
+                        loading,
+                      }) => (
+                        <div className="flex flex-col">
+                          <input
+                            {...getInputProps({
+                              placeholder: t.form.addressPlaceholder,
+                              className:
+                                "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black",
+                            })}
+                          />
+                          <div className="bg-white rounded-md mt-1 shadow-lg">
+                            {loading && (
+                              <div className="p-2 text-gray-500">
+                                {t.form.loading}
+                              </div>
+                            )}
+                            {suggestions.map((suggestion) =>
+                              renderSuggestion(
+                                suggestion,
+                                getSuggestionItemProps,
+                              ),
+                            )}
+                          </div>
+                          {errors.address && (
+                            <p className="text-red-500 text-sm mt-1">
+                              {language === "fr"
+                                ? "Adresse requise"
+                                : errors.address.message}
+                            </p>
                           )}
                         </div>
-                        {errors.address && (
-                          <p className="text-red-500">
-                            {errors.address.message}
-                          </p>
-                        )}
-                      </div>
-                    )}
-                  </PlacesAutocomplete>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-                    <input
-                      {...register("firstName")}
-                      placeholder={t.form.firstNamePlaceholder}
-                      className="p-3 border border-gray-300 rounded-md"
-                    />
-                    {errors.firstName && (
-                      <p className="text-red-500">{errors.firstName.message}</p>
-                    )}
-                    <input
-                      {...register("lastName")}
-                      placeholder={t.form.lastNamePlaceholder}
-                      className="p-3 border border-gray-300 rounded-md"
-                    />
-                    {errors.lastName && (
-                      <p className="text-red-500">{errors.lastName.message}</p>
-                    )}
+                      )}
+                    </PlacesAutocomplete>
                   </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-                    <input
-                      {...register("email")}
-                      type="email"
-                      placeholder={t.form.emailPlaceholder}
-                      className="p-3 border border-gray-300 rounded-md"
-                    />
-                    {errors.email && (
-                      <p className="text-red-500">{errors.email.message}</p>
-                    )}
-                    <input
-                      {...register("phone")}
-                      type={t.form.phonePlaceholder}
-                      placeholder="telephone"
-                      className="p-3 border border-gray-300 rounded-md"
-                    />
-                    {errors.phone && (
-                      <p className="text-red-500">{errors.phone.message}</p>
-                    )}
+                    <div className="flex flex-col">
+                      <input
+                        {...register("firstName")}
+                        placeholder={t.form.firstNamePlaceholder}
+                        className="p-3 border border-gray-300 rounded-md w-full"
+                      />
+                      {errors.firstName && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Prénom requis"
+                            : errors.firstName.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col">
+                      <input
+                        {...register("lastName")}
+                        placeholder={t.form.lastNamePlaceholder}
+                        className="p-3 border border-gray-300 rounded-md w-full"
+                      />
+                      {errors.lastName && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Nom de famille requis"
+                            : errors.lastName.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                    <div className="flex flex-col">
+                      <input
+                        {...register("email")}
+                        type="email"
+                        placeholder={t.form.emailPlaceholder}
+                        className="p-3 border border-gray-300 rounded-md w-full"
+                      />
+                      {errors.email && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Email invalide"
+                            : errors.email.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col">
+                      <input
+                        {...register("phone")}
+                        type="tel"
+                        placeholder={t.form.phonePlaceholder || "telephone"}
+                        className="p-3 border border-gray-300 rounded-md w-full"
+                      />
+                      {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {language === "fr"
+                            ? "Numéro de téléphone invalide"
+                            : errors.phone.message}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
+
                 <button
                   type="submit"
                   className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"
                 >
                   {t.form.submitButton}
                 </button>
-              </form>
+              </form>{" "}
             </div>
           </div>
         </div>

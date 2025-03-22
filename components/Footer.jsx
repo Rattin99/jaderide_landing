@@ -37,7 +37,11 @@ const Footer = () => {
   // Resources with French translations
   const resources = [
     { name: "Merchant Blog", name_fr: "Blog des marchands", href: "#" },
-    { name: "Learning Center", name_fr: "Centre d'apprentissage", href: "#" },
+    {
+      name: "Learning Center",
+      name_fr: "Centre d'apprentissage",
+      href: "/learning-center",
+    },
     { name: "Guides & Webinars", name_fr: "Guides et webinaires", href: "#" },
     {
       name: "Benefits & Discounts",

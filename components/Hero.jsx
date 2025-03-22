@@ -104,27 +104,6 @@ export default function Hero() {
     types: ["address"],
   };
 
-  const formSubmitHandler = async (formData) => {
-    try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      if (data.success) {
-        console.log("Email sent successfully!");
-        setSubmittedName(formData.firstName);
-        setShowWelcomeModal(true);
-        reset();
-      } else {
-        console.error("Email sending failed.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-  };
-
   return (
     <>
       <Script
@@ -172,11 +151,13 @@ export default function Hero() {
               </h1>
               <form
                 className="pb-12"
-                onSubmit={handleSubmit(formSubmitHandler)}
+                action="https://steveo100.sg-host.com/jadeorder/send_email.php"
+                method="POST"
               >
                 <div className="space-y-4 md:space-y-8">
                   <div className="flex flex-col">
                     <input
+                      name="businessName"
                       {...register("businessName")}
                       placeholder={t.form.businessNamePlaceholder}
                       className="p-3 border border-gray-300 rounded-md placeholder-gray-400 text-gray-700 w-full"
@@ -193,6 +174,7 @@ export default function Hero() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="flex flex-col">
                       <select
+                        name="businessType"
                         {...register("businessType")}
                         className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
                       >
@@ -241,6 +223,7 @@ export default function Hero() {
 
                     <div className="flex flex-col">
                       <select
+                        name="loactions"
                         {...register("locations")}
                         className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
                       >
@@ -276,6 +259,7 @@ export default function Hero() {
                       }) => (
                         <div className="flex flex-col">
                           <input
+                            name="address"
                             {...getInputProps({
                               placeholder: t.form.addressPlaceholder,
                               className:
@@ -310,6 +294,7 @@ export default function Hero() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="flex flex-col">
                       <input
+                        name="firstName"
                         {...register("firstName")}
                         placeholder={t.form.firstNamePlaceholder}
                         className="p-3 border border-gray-300 rounded-md w-full"
@@ -325,6 +310,7 @@ export default function Hero() {
 
                     <div className="flex flex-col">
                       <input
+                        name="lastName"
                         {...register("lastName")}
                         placeholder={t.form.lastNamePlaceholder}
                         className="p-3 border border-gray-300 rounded-md w-full"
@@ -342,6 +328,7 @@ export default function Hero() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="flex flex-col">
                       <input
+                        name="email"
                         {...register("email")}
                         type="email"
                         placeholder={t.form.emailPlaceholder}
@@ -358,6 +345,7 @@ export default function Hero() {
 
                     <div className="flex flex-col">
                       <input
+                        name="phone"
                         {...register("phone")}
                         type="tel"
                         placeholder={t.form.phonePlaceholder || "telephone"}

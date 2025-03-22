@@ -154,13 +154,13 @@ export default function Hero() {
         {language == "en" && (
           <img
             src="/jadeorder/hero.png"
-            className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[1000px] z-0"
+            className="absolute top-0 object-cover w-full h-full   z-0"
           />
         )}
         {language == "fr" && (
           <img
             src="/jadeorder/hero_fr.png"
-            className="absolute top-0 object-cover w-full max-h-4/5 md:max-h-[1000px] z-0"
+            className="absolute top-0 object-cover w-full h-full  z-0"
           />
         )}
         <div className="container relative w-full mx-auto px-4 z-10">

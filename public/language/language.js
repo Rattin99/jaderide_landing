@@ -24,13 +24,13 @@ export const translations = {
       },
     },
     deliverSection: {
-      title: "Delivering More",
+      title: "Stand Out with Your Mobile App",
       description:
-        "When you think of Jade Media Delivery, you think of delivery — but the Jade Media Delivery Merchant Suite delivers many ways to help you grow.",
+        "Our user-friendly mobile app can truly change the game for your restaurant, bakery or any type of store you manage.",
       growth: {
         title: "Grow with Jade Media Delivery",
         description:
-          "Expand your reach by listing your restaurant, shop, or store on the Jade Media Delivery app, also known as Marketplace. Plus, increase your sales by tapping into JMDPass subscribers, who spend and order more on average. Included in every partnership is Storefront — customizable and commission-free ordering that lives on your website. Or use Drive to offer delivery from your own site or by tapping into Jade Media Delivery's network of Dashers. Finally, streamline operations with Tableside Order & Pay, our in-store QR code ordering and payment solution.",
+          "Partner with us and we will debunk the most common misconceptions about owning a mobile app. Jade Orders is easy to use and extremely affordable. We will customize it just for you with your business name, logo, colors and branding. Having your own mobile app can boost sales, increase engagement and create happier customers. You can highlight your unique offerings and send personalized promotions directly to your users’ phones at no extra cost. Your customers deserve the best and so do you. Contact us today and ask for our limited time 50% off offer!",
       },
     },
     welcomeModal: {
@@ -154,13 +154,13 @@ export const translations = {
       },
     },
     deliverSection: {
-      title: "Livrer Plus",
+      title: "Faites ressortir votre application mobile",
       description:
-        "Lorsque vous pensez à Jade Media Delivery, vous pensez à la livraison — mais la suite de services marchands de Jade Media Delivery vous offre de nombreuses façons de vous développer.",
+        "Notre application mobile conviviale peut vraiment changer la donne pour votre restaurant, boulangerie ou tout autre type de magasin que vous gérez.",
       growth: {
         title: "Développez-vous avec Jade Media Delivery",
         description:
-          "Étendez votre portée en répertoriant votre restaurant, boutique ou magasin sur l'application Jade Media Delivery, également connue sous le nom de Marketplace. De plus, augmentez vos ventes en touchant les abonnés JMDPass, qui dépensent et commandent plus en moyenne. Chaque partenariat comprend Storefront — une commande personnalisable et sans commission directement sur votre site web. Ou utilisez Drive pour proposer une livraison depuis votre propre site ou en exploitant le réseau de livreurs de Jade Media Delivery. Enfin, optimisez vos opérations avec Tableside Order & Pay, notre solution de commande et de paiement via QR code en magasin.",
+          "Associez-vous à nous et nous démystifierons les idées reçues les plus courantes sur la possession d'une application mobile. Jade Orders est facile à utiliser et extrêmement abordable. Nous la personnaliserons spécialement pour vous avec le nom de votre entreprise, votre logo, vos couleurs et votre identité visuelle. Avoir votre propre application mobile peut augmenter vos ventes, renforcer l’engagement et fidéliser vos clients. Vous pourrez mettre en avant vos offres uniques et envoyer des promotions personnalisées directement sur les téléphones de vos utilisateurs, sans frais supplémentaires. Vos clients méritent le meilleur, et vous aussi. Contactez-nous dès aujourd’hui et profitez de notre offre exceptionnelle : 50 % de réduction pour une durée limitée !",
       },
     },
     welcomeModal: {

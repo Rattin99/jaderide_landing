@@ -22,42 +22,43 @@ export default function StepsSection() {
       image: "/jadeorder/image1.png",
     },
     {
-      title: "Chat with our team",
+      title: "Chat with our expert",
       description:
-        "Our team of experts will discuss the best option to join the JMD network.",
-      title_fr: "Discutez avec notre équipe",
+        "A member of our team will contact you to answer all your questions and to help you choose the best solution for your business.",
+      title_fr: "Discutez avec notre expert",
       description_fr:
-        "Notre équipe d'experts discutera de la meilleure option pour rejoindre le réseau JMD.",
+        "Un membre de notre équipe vous contactera pour répondre à toutes vos questions et vous aider à choisir la meilleure solution pour votre entreprise.",
       image: "/jadeorder/image2.png",
     },
     {
-      title: "Onboarding",
+      title: "Set up your account",
       description:
-        "Set up your tablet and banking details with our step-by-step instructions and interactive onboarding journey.",
-      title_fr: "Intégration",
+        "Get your images, banners, and logo ready to set up your account within minutes. We have step-by-step guides for you to follow easily.",
+      title_fr: "Configurez votre compte",
       description_fr:
-        "Configurez votre tablette et vos coordonnées bancaires avec nos instructions étape par étape et un parcours d'intégration interactif.",
+        "Préparez vos images, bannières et logo pour configurer votre compte en quelques minutes. Nous avons des guides étape par étape faciles à suivre.",
       image: "/jadeorder/image3.png",
     },
     {
-      title: "Build your product catalogue",
+      title: "Add your products",
       description:
-        "Our intuitive merchant platform makes getting your product offering live in the app quick and easy.",
-      title_fr: "Créez votre catalogue de produits",
+        "Through your personalized admin panel, you can create your product catalogue. They will be instantly available once your app is live.",
+      title_fr: "Ajoutez vos produits",
       description_fr:
-        "Notre plateforme marchande intuitive rend la mise en ligne de votre offre de produits rapide et facile.",
+        "Grâce à votre panneau d'administration personnalisé, vous pouvez créer votre catalogue de produits. Ils seront instantanément disponibles une fois votre application en ligne.",
       image: "/jadeorder/image4.png",
     },
     {
-      title: "Start making money",
+      title: "Promote your app",
       description:
-        "Tap into untapped revenue from hundreds of customers looking for the convenience of delivery across Canada.",
-      title_fr: "Commencez à gagner de l'argent",
+        "Display your app everywhere in your store and online. Invite your customers to download it and start seeing results.",
+      title_fr: "Faites la promotion de votre application",
       description_fr:
-        "Accédez à des revenus inexploités provenant de centaines de clients à la recherche de la commodité de la livraison à travers le Canada.",
+        "Affichez votre application partout dans votre magasin et en ligne. Invitez vos clients à la télécharger et commencez à voir des résultats.",
       image: "/jadeorder/image5.png",
     },
   ];
+
   // Keen-slider state
   const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider({

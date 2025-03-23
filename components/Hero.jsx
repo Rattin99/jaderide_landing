@@ -104,6 +104,32 @@ export default function Hero() {
     types: ["address"],
   };
 
+  const onSubmit = async (data) => {
+    try {
+      // Submit the form data to the PHP script
+      const response = await fetch(
+        "https://steveo100.sg-host.com/jadeorder/send_email.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (response.ok) {
+        // Handle success (e.g., redirect or show a success message)
+        alert("Form submitted successfully!");
+      } else {
+        // Handle error
+        alert("Failed to submit form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
   return (
     <>
       <Script
@@ -151,7 +177,7 @@ export default function Hero() {
               </h1>
               <form
                 className="pb-12"
-                action="https://steveo100.sg-host.com/jadeorder/send_email.php"
+                onSubmit={handleSubmit(onSubmit)}
                 method="POST"
               >
                 <div className="space-y-4 md:space-y-8">

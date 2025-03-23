@@ -34,7 +34,7 @@ export default function DeliverSections() {
 
           <div className="lg:w-1/2 flex justify-center">
             <img
-              src="/jadeorder/increase.png"
+              src="/jadeorder/laptop-new.png"
               alt="Increase"
               className="max-w-full h-auto rounded-md"
             />

@@ -28,7 +28,7 @@ export const translations = {
       description:
         "Our user-friendly mobile app can truly change the game for your restaurant, bakery or any type of store you manage.",
       growth: {
-        title: "Grow with Jade Media Delivery",
+        title: "Grow with Jade Orders",
         description:
           "Partner with us and we will debunk the most common misconceptions about owning a mobile app. Jade Orders is easy to use and extremely affordable. We will customize it just for you with your business name, logo, colors and branding. Having your own mobile app can boost sales, increase engagement and create happier customers. You can highlight your unique offerings and send personalized promotions directly to your users’ phones at no extra cost. Your customers deserve the best and so do you. Contact us today and ask for our limited time 50% off offer!",
       },
@@ -100,17 +100,17 @@ export const translations = {
       select: "Select one",
     },
     jadeMediaDelivery: {
-      title: "Get the most out of Jade Media Delivery",
+      title: "Get the most out of Jade Orders",
       description: {
         part1:
-          "We provide customized, accessible support whenever you need it, including 24/7 phone and chat support, account help, and direct communication with assigned drivers.",
+          "We are committed to help you grow your business. Your success is our success. We provide customized, accessible support whenever you need it, including 24/7 chat support.",
         part2:
-          "Plus, visit the Learning Center to view step-by-step tutorials and training videos on setting up, running, and growing your store on Jade Media Delivery, so you can grow profits and reach more new customers.",
+          "We have step by step tutorials on setting up, running and growing your store with the Jade Orders app so you can reach more new customers and of course make more money.",
       },
       button: "Visit the Learning Center",
-      explore: " Explore insights you can use",
+      explore: " More than just an app",
       exploreText:
-        "Analyze sales, access financials, respond to reviews, and check out customer insights including zip codes for delivery. Log on to the Merchant Portal or use the Business Manager App on your phone.",
+        "Our Jade Orders Suite is not a single application. It includes an app for your customers, a web version for your customers who prefer the convenience of a laptop or PC. An app for you, the merchant, and an app for your drivers if you have your own fleet of delivery drivers. It also includes a website to promote the app and your business. And finally, a backend to easily manage everything. And do not worry, everything is customizable. You can take just the tool you need, a single app or the whole solution. We're here to help you work better, not force you to buy something you don't need. Give us a try and you'll see we're a different kind of company.",
     },
     faqSection: {
       title: "Frequently Asked Questions",
@@ -158,7 +158,7 @@ export const translations = {
       description:
         "Notre application mobile conviviale peut vraiment changer la donne pour votre restaurant, boulangerie ou tout autre type de magasin que vous gérez.",
       growth: {
-        title: "Développez-vous avec Jade Media Delivery",
+        title: "Développez-vous avec Jade Orders",
         description:
           "Associez-vous à nous et nous démystifierons les idées reçues les plus courantes sur la possession d'une application mobile. Jade Orders est facile à utiliser et extrêmement abordable. Nous la personnaliserons spécialement pour vous avec le nom de votre entreprise, votre logo, vos couleurs et votre identité visuelle. Avoir votre propre application mobile peut augmenter vos ventes, renforcer l’engagement et fidéliser vos clients. Vous pourrez mettre en avant vos offres uniques et envoyer des promotions personnalisées directement sur les téléphones de vos utilisateurs, sans frais supplémentaires. Vos clients méritent le meilleur, et vous aussi. Contactez-nous dès aujourd’hui et profitez de notre offre exceptionnelle : 50 % de réduction pour une durée limitée !",
       },
@@ -232,17 +232,17 @@ export const translations = {
       select: "Sélectionnez-en un",
     },
     jadeMediaDelivery: {
-      title: "Tirez le meilleur parti de Jade Media Delivery",
+      title: "Tirez le meilleur parti de Jade Orders",
       description: {
         part1:
-          "Nous offrons un support personnalisé et accessible chaque fois que vous en avez besoin, y compris un support téléphonique et par chat 24h/24 et 7j/7, de l'aide pour votre compte et une communication directe avec les conducteurs affectés.",
+          "Nous nous engageons à vous aider à développer votre entreprise. Votre succès est notre succès. Nous offrons un support personnalisé et accessible quand vous en avez besoin, y compris une assistance par chat 24h/24 et 7j/7. ",
         part2:
-          "De plus, visitez le Centre d'apprentissage pour consulter des tutoriels étape par étape et des vidéos de formation sur la configuration, l'exploitation et la croissance de votre boutique sur Jade Media Delivery, afin de développer vos profits et d'atteindre davantage de nouveaux clients.",
+          "Nous proposons des tutoriels étape par étape pour configurer, gérer et développer votre boutique avec l'application Jade Orders, afin que vous puissiez atteindre plus de nouveaux clients et, bien sûr, gagner plus d'argent.",
       },
       button: "Visitez le Centre d'apprentissage",
-      explore: "Explorez des informations que vous pouvez utiliser.",
+      explore: "Tirez le meilleur parti de Jade Orders",
       exploreText:
-        "Analysez les ventes, consultez les finances, répondez aux avis et découvrez des informations sur les clients, y compris les codes postaux pour la livraison. Connectez-vous au portail marchand ou utilisez l'application Business Manager sur votre téléphone.",
+        "Notre suite Jade Orders n'est pas une simple application. Elle comprend une application pour vos clients, une version web pour ceux qui préfèrent utiliser un ordinateur, une application pour vous, le commerçant, et une autre pour vos livreurs si vous avez votre propre flotte. Elle inclut également un site web pour promouvoir votre entreprise et un backend intuitif pour tout gérer facilement. Tout est personnalisable : prenez uniquement l’outil dont vous avez besoin, une seule application ou la solution complète. Notre objectif est de vous aider à mieux travailler, pas de vous imposer un achat inutile. Essayez-nous, et vous verrez que nous sommes une entreprise différente.",
     },
     faqSection: {
       title: "Questions fréquemment posées",

@@ -54,7 +54,7 @@ const JadeMediaDelivery = () => {
             </div>
             <div className="lg:w-1/2 order-1 lg:order-2">
               <Image
-                src="/jadeorder/dashboard.png"
+                src="/jadeorder/dashboard-new.png"
                 alt="Dashboard Insights"
                 width={600}
                 height={400}

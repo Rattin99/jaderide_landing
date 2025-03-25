@@ -35,7 +35,9 @@ const LearningSection = () => {
                 {t.learningCenter.card1description}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                {t.learningCenter.readmore} →
+                <a href="https://drive.google.com/file/d/1OZhcjszY1D0KL2AsLhrRnxSeH3uWrvHX/view?usp=sharing">
+                  {t.learningCenter.readmore} →
+                </a>
               </div>
             </div>
           </div>
@@ -57,7 +59,9 @@ const LearningSection = () => {
                 {t.learningCenter.card2description}{" "}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                {t.learningCenter.readmore} →
+                <a href="https://drive.google.com/file/d/1OZhcjszY1D0KL2AsLhrRnxSeH3uWrvHX/view?usp=sharing">
+                  {t.learningCenter.readmore} →
+                </a>
               </div>
             </div>
           </div>
@@ -79,7 +83,9 @@ const LearningSection = () => {
                 {t.learningCenter.card3description}{" "}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                {t.learningCenter.readmore} →
+                <a href="https://drive.google.com/file/d/1OZhcjszY1D0KL2AsLhrRnxSeH3uWrvHX/view?usp=sharing">
+                  {t.learningCenter.readmore} →
+                </a>{" "}
               </div>
             </div>
           </div>

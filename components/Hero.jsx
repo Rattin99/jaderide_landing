@@ -107,26 +107,23 @@ export default function Hero() {
   const onSubmit = async (data) => {
     try {
       const response = await fetch(
-        "https://your-region-your-project-id.cloudfunctions.net/your-function-name",
+        "https://us-central1-delivexpress-5aa93.cloudfunctions.net/handleFormSubmission",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         },
       );
 
-      const result = await response.json();
-
-      if (response.ok) {
-        alert(result.message); // Success message from the cloud function
-      } else {
-        alert(result.error || "Failed to submit form. Please try again.");
+      if (!response.ok) {
+        console.log("response", response);
+        throw new Error("Failed to submit form");
       }
+
+      setShowWelcomeModal(true);
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again.");
+      console.error("Error:", error);
+      alert("Error submitting form. Please try again.");
     }
   };
   return (
@@ -145,7 +142,11 @@ export default function Hero() {
           </DialogHeader>
           <DialogFooter>
             <Button
-              onClick={() => setShowWelcomeModal(false)}
+              onClick={() => {
+                reset();
+                setAddress("");
+                setShowWelcomeModal(false);
+              }}
               className="bg-blue-800 hover:bg-blue-700"
             >
               {t.welcomeModal.closeButton}

@@ -1,14 +1,21 @@
+"use client";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 import Image from "next/image";
+import { useContext } from "react";
 
 const LearningSection = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <div className="w-full">
       {/* Starter Guide Section */}
       <section className="text-center px-4 py-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Starter Guide</h2>
+        <h2 className="text-xl md:text-2xl font-semibold">
+          {t.learningCenter.starterGuideTitle}
+        </h2>
         <p className="text-gray-600 mt-2">
-          Follow these steps to launch your Jade Media Delivery store and start
-          growing sales
+          {t.learningCenter.starterguidesubtitle}
         </p>
         <div className="mt-6 w-full flex flex-col md:flex-row items-stretch justify-center gap-6">
           {/* Card 1 */}
@@ -22,14 +29,13 @@ const LearningSection = () => {
             />
             <div className="p-4 text-left flex-1 flex flex-col">
               <h3 className="text-lg font-semibold mt-3">
-                How to sign up for Jade Media Delivery as a Merchant
+                {t.learningCenter.card1Title}
               </h3>
               <p className="text-gray-600 text-sm mt-2 flex-1">
-                Learn how to sign up, set up your store, and begin taking orders
-                in no time.
+                {t.learningCenter.card1description}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                Read more →
+                {t.learningCenter.readmore} →
               </div>
             </div>
           </div>
@@ -45,14 +51,13 @@ const LearningSection = () => {
             />
             <div className="p-4 text-left flex-1 flex flex-col">
               <h3 className="text-lg font-semibold mt-3">
-                How to set up all your store essentials
+                {t.learningCenter.card2Title}
               </h3>
               <p className="text-gray-600 text-sm mt-2 flex-1">
-                Everything you need to know about setting up your store on the
-                Merchant Portal.
+                {t.learningCenter.card2description}{" "}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                Read more →
+                {t.learningCenter.readmore} →
               </div>
             </div>
           </div>
@@ -68,14 +73,13 @@ const LearningSection = () => {
             />
             <div className="p-4 text-left flex-1 flex flex-col">
               <h3 className="text-lg font-semibold mt-3">
-                How to add photos to your menu
+                {t.learningCenter.card3Title}
               </h3>
               <p className="text-gray-600 text-sm mt-2 flex-1">
-                Learn how to add your logo, photos, and other ways to enhance
-                your menu.
+                {t.learningCenter.card3description}{" "}
               </p>
               <div className="text-blue-600 mt-3 text-sm font-medium">
-                Read more →
+                {t.learningCenter.readmore} →
               </div>
             </div>
           </div>
@@ -94,11 +98,10 @@ const LearningSection = () => {
           />
           <div>
             <h3 className="text-4xl font-semibold">
-              Train your team to use Jade Media Delivery
+              {t.learningCenter.trainTitle}
             </h3>
             <p className="mt-2 text-xl text-gray-200">
-              Quickly equip your team with the skills they need to process
-              orders, problem-solve, and keep operations running smoothly.
+              {t.learningCenter.trainDescription}
             </p>
           </div>
         </div>
@@ -115,10 +118,11 @@ const LearningSection = () => {
             className="rounded-lg"
           />
           <div>
-            <h3 className="text-4xl font-semibold">Jade Media Roots</h3>
+            <h3 className="text-4xl font-semibold">
+              {t.learningCenter.rootsTitle}
+            </h3>
             <p className="mt-2 text-xl text-gray-600">
-              Staying true to JadeMedia’s mission of empowering local economies,
-              JadeMediaRoots elevates voices.
+              {t.learningCenter.rootsDescription}{" "}
             </p>
           </div>
         </div>

@@ -106,9 +106,8 @@ export default function Hero() {
 
   const onSubmit = async (data) => {
     try {
-      // Submit the form data to the PHP script
       const response = await fetch(
-        "https://steveo100.sg-host.com/jadeorder/send_email.php",
+        "https://your-region-your-project-id.cloudfunctions.net/your-function-name",
         {
           method: "POST",
           headers: {
@@ -118,12 +117,12 @@ export default function Hero() {
         },
       );
 
+      const result = await response.json();
+
       if (response.ok) {
-        // Handle success (e.g., redirect or show a success message)
-        alert("Form submitted successfully!");
+        alert(result.message); // Success message from the cloud function
       } else {
-        // Handle error
-        alert("Failed to submit form. Please try again.");
+        alert(result.error || "Failed to submit form. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

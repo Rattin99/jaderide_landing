@@ -19,11 +19,13 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <img src="/jadeorder/logo.png" />
+            <a href="/jadeorder" className="cursor-pointer">
+              <img src="/jadeorder/logo.png" />
+            </a>
           </div>
           <div className="hidden lg:flex items-center space-x-5 lg:space-x-16">
-            <a href="#" className="text-gray-700 hover:text-blue-800">
-              {t.navbar.products}
+            <a href="/jadeorder" className="text-gray-700 hover:text-blue-800">
+              {t.navbar.home}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
               {t.navbar.solutions}
@@ -31,8 +33,11 @@ export default function Navbar() {
             <a href="#" className="text-gray-700 hover:text-blue-800">
               {t.navbar.resources}
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-800">
-              {t.navbar.pricing}
+            <a
+              href="/jadeorder/learning-center"
+              className="text-gray-700 hover:text-blue-800"
+            >
+              {t.navbar.learningCenter}
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-800">
               {t.navbar.contact}

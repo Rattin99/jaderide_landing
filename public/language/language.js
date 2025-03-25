@@ -1,3 +1,5 @@
+import LearningCenter from "@/components/LearningCenter";
+
 export const translations = {
   en: {
     commitmentSection: {
@@ -81,10 +83,10 @@ export const translations = {
       title: "Why having your own pick up and delivery app?",
     },
     navbar: {
-      products: "Products",
+      home: "Home",
       solutions: "Solutions",
       resources: "Resources",
-      pricing: "Pricing",
+      learningCenter: "Learning Center",
       contact: "Contact",
       button: "Get Started",
     },
@@ -127,6 +129,41 @@ export const translations = {
       products: "PRODUCTS",
       businessTypes: "BUSINESS TYPES",
       resources: "RESOURCES",
+    },
+    learningCenter: {
+      learningCenter: "Learning Center",
+      welcome: "Welcome to the ",
+      welcomeSubtitle:
+        "Access step-by-step guides to set up your store, manage your store operations, and make the most of your Jade Media Delivery partnership.",
+      tablet: "Set up your Jade Media Tablet",
+      tabletDescription:
+        "Get ready to access your menu, go live, and start accepting orders on your tablet!",
+      starterGuideTitle: "Starter Guide",
+      starterguidesubtitle:
+        "Follow these steps to launch your Jade Media Delivery store and start growing sales",
+      card1Title: "How to sign up for Jade Media Delivery as a Merchant",
+      card1description:
+        "Learn how to sign up, set up your store, and begin taking orders in no time.",
+      card2Title: "How to set up all your store essentials",
+      card2description:
+        "Everything you need to know about setting up your store on the Merchant Portal.",
+      card3Title: "How to add photos to your menu",
+      card3description:
+        "Learn how to add your logo, photos, and other ways to enhance your menu.",
+      readmore: "Read More",
+      trainTitle: "Train your team to use Jade Media Delivery",
+      trainDescription:
+        "Quickly equip your team with the skills they need to process orders, problem-solve, and keep operations running smoothly.",
+      rootsTitle: "Jade Media Roots",
+      rootsDescription:
+        "Staying true to JadeMedia’s mission of empowering local economies, JadeMediaRoots elevates voices.",
+      buttons: {
+        getStarted: "Get Started",
+        menuSetup: "Menu Setup",
+        manageOrders: "Manage Orders",
+        storeManagement: "Store Management",
+        waysToGrow: "Ways to Grow",
+      },
     },
   },
   fr: {
@@ -212,10 +249,10 @@ export const translations = {
         "Pourquoi avoir votre propre application de ramassage et de livraison ?",
     },
     navbar: {
-      products: "Produits",
+      home: "Accueil",
       solutions: "Solutions",
       resources: "Ressources",
-      pricing: "Tarification",
+      learningCenter: "Centre d’apprentissage",
       contact: "Contact",
       button: "Commencer",
     },
@@ -259,6 +296,43 @@ export const translations = {
       products: "PRODUITS",
       businessTypes: "TYPES D'ENTREPRISE",
       resources: "RESSOURCES",
+    },
+    learningCenter: {
+      learningCenter: "Centre d’Apprentissage",
+      welcome: "Bienvenue au ",
+      welcomeSubtitle:
+        "Accédez à des guides étape par étape pour configurer votre boutique, gérer vos opérations et tirer le meilleur parti de votre partenariat avec Jade Media Delivery.",
+      tablet: "Configurer votre tablette Jade Media",
+      tabletDescription:
+        "Préparez-vous à accéder à votre menu, passer en ligne et commencer à accepter des commandes sur votre tablette !",
+      starterGuideTitle: "Guide de démarrage",
+      starterguidesubtitle:
+        "Suivez ces étapes pour lancer votre boutique Jade Media Delivery et commencer à augmenter vos ventes.",
+      card1Title:
+        "Comment s’inscrire à Jade Media Delivery en tant que commerçant",
+      card1description:
+        "Découvrez comment vous inscrire, configurer votre boutique et commencer à prendre des commandes en un rien de temps.",
+      card2Title:
+        "Comment configurer tous les éléments essentiels de votre boutique",
+      card2description:
+        "Tout ce que vous devez savoir sur la configuration de votre boutique sur le Portail Marchand.",
+      card3Title: "Comment ajouter des photos à votre menu",
+      card3description:
+        "Apprenez à ajouter votre logo, des photos et d’autres éléments pour améliorer votre menu.",
+      readmore: "En savoir plus",
+      trainTitle: "Formez votre équipe à utiliser Jade Media Delivery",
+      trainDescription:
+        "Donnez rapidement à votre équipe les compétences nécessaires pour traiter les commandes, résoudre les problèmes et assurer le bon fonctionnement des opérations.",
+      rootsTitle: "Jade Media Roots",
+      rootsDescription:
+        "Fidèle à la mission de JadeMedia visant à autonomiser les économies locales, JadeMediaRoots met en avant des voix engagées.",
+      buttons: {
+        getStarted: "Commencer",
+        menuSetup: "Configuration du menu",
+        manageOrders: "Gérer les commandes",
+        storeManagement: "Gestion du magasin",
+        waysToGrow: "Façons de se développer",
+      },
     },
   },
 };

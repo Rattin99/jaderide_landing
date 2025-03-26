@@ -10,8 +10,8 @@ const LearningCenter = () => {
   return (
     <section className="w-full h-full z-10 py-28  ">
       {/* Intro Section */}
-      <div className="max-w-7xl  h-full mx-auto text-center md:text-left md:flex md:items-center md:gap-10">
-        <div className="md:w-1/2">
+      <div className="max-w-7xl  h-full mx-auto text-center md:text-left flex-col md:flex md:flex-row md:items-center  md:gap-10">
+        <div className="md:w-1/2 text-left ml-4 md:ml-0">
           <h2 className="text-2xl md:text-4xl font-bold">
             {t.learningCenter.welcome}
             <span className="text-blue-600">
@@ -22,19 +22,19 @@ const LearningCenter = () => {
             {t.learningCenter.welcomeSubtitle}{" "}
           </p>
         </div>
-        <div className="md:w-1/2 flex items-center justify-center mt-6 md:mt-0">
+        <div className="md:w-1/2 flex justify-end mt-6 md:mt-0">
           <Image
             src="/jadeorder/biker.png"
             alt="Delivery Person on Bike"
             width={500}
             height={200}
-            className="rounded-lg object-cover h-[500px] overflow-hidden"
+            className="rounded-none md:rounded-lg object-cover h-[500px] overflow-hidden"
           />
         </div>
       </div>
       {/* Navigation Tabs */}
       <div className="w-full   mt-8 overflow-x-auto no-scrollbar">
-        <div className="bg-blue-50  pr-96 flex flex-nowrap justify-start whitespace-nowrap max-w-7xl mx-auto rounded-lg no-scrollbar ">
+        <div className="bg-blue-50  pr-96 flex flex-nowrap justify-start whitespace-nowrap min-w-max md:max-w-7xl mx-auto rounded-lg no-scrollbar ">
           <button className="px-4  bg-blue-800  text-white rounded-l-sm rounded-r-full ">
             {t.learningCenter.learningCenter}
           </button>
@@ -73,7 +73,7 @@ const LearningCenter = () => {
               alt="Chef using tablet"
               width={500}
               height={300}
-              className="rounded-lg"
+              className="rounded-lg w-full"
             />
           </div>
         </div>

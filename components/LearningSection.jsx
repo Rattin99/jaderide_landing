@@ -10,7 +10,7 @@ const LearningSection = () => {
   return (
     <div className="w-full">
       {/* Starter Guide Section */}
-      <section className="text-center px-4 py-12">
+      <section className="text-center px-4 md:py-12">
         <h2 className="text-xl md:text-2xl font-semibold">
           {t.learningCenter.starterGuideTitle}
         </h2>

@@ -109,8 +109,11 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
-                {t.navbar.products}
+              <a
+                href="/jadeorder"
+                className="block text-gray-700 hover:text-blue-800"
+              >
+                {t.navbar.home}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
                 {t.navbar.solutions}
@@ -118,8 +121,11 @@ export default function Navbar() {
               <a href="#" className="block text-gray-700 hover:text-blue-800">
                 {t.navbar.resources}
               </a>
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
-                {t.navbar.pricing}
+              <a
+                href="/jadeorder/learning-center"
+                className="block text-gray-700 hover:text-blue-800"
+              >
+                {t.navbar.learningCenter}
               </a>
               <a href="#" className="block text-gray-700 hover:text-blue-800">
                 {t.navbar.contact}

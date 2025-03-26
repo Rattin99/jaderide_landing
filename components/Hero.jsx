@@ -57,6 +57,7 @@ export default function Hero() {
   const [submittedName, setSubmittedName] = useState("");
   const { language } = useContext(LanguageContext);
   const t = translations[language];
+  const [countryCode, setCountryCode] = useState("+1");
 
   const {
     register,
@@ -106,12 +107,27 @@ export default function Hero() {
 
   const onSubmit = async (data) => {
     try {
+      // Destructure country code and phone, then create full phone number
+      const { countryCode, phone, ...otherData } = data;
+
+      // Remove any non-digit characters from phone number
+      const cleanedPhone = phone.replace(/\D/g, "");
+
+      // Merge country code and cleaned phone number
+      const fullPhoneNumber = `${countryCode}${cleanedPhone}`;
+
+      // Create a new data object with merged phone number
+      const submissionData = {
+        ...otherData,
+        phone: fullPhoneNumber,
+      };
+
       const response = await fetch(
         "https://us-central1-delivexpress-5aa93.cloudfunctions.net/handleFormSubmission",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
+          body: JSON.stringify(submissionData),
         },
       );
 
@@ -119,7 +135,6 @@ export default function Hero() {
         console.log("response", response);
         throw new Error("Failed to submit form");
       }
-
       setShowWelcomeModal(true);
     } catch (error) {
       console.error("Error:", error);
@@ -196,7 +211,6 @@ export default function Hero() {
                       </p>
                     )}
                   </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="flex flex-col">
                       <select
@@ -246,10 +260,9 @@ export default function Hero() {
                         </p>
                       )}
                     </div>
-
                     <div className="flex flex-col">
                       <select
-                        name="loactions"
+                        name="locations"
                         {...register("locations")}
                         className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
                       >
@@ -269,7 +282,6 @@ export default function Hero() {
                       )}
                     </div>
                   </div>
-
                   <div className="flex flex-col">
                     <PlacesAutocomplete
                       value={address}
@@ -316,7 +328,6 @@ export default function Hero() {
                       )}
                     </PlacesAutocomplete>
                   </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="flex flex-col">
                       <input
@@ -333,7 +344,6 @@ export default function Hero() {
                         </p>
                       )}
                     </div>
-
                     <div className="flex flex-col">
                       <input
                         name="lastName"
@@ -350,44 +360,58 @@ export default function Hero() {
                       )}
                     </div>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-                    <div className="flex flex-col">
-                      <input
-                        name="email"
-                        {...register("email")}
-                        type="email"
-                        placeholder={t.form.emailPlaceholder}
-                        className="p-3 border border-gray-300 rounded-md w-full"
-                      />
-                      {errors.email && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {language === "fr"
-                            ? "Email invalide"
-                            : errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="flex flex-col">
+                  <div className="flex flex-col space-y-4">
+                    <input
+                      name="email"
+                      {...register("email")}
+                      type="email"
+                      placeholder={t.form.emailPlaceholder}
+                      className="p-3 border border-gray-300 rounded-md w-full"
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {language === "fr"
+                          ? "Email invalide"
+                          : errors.email.message}
+                      </p>
+                    )}
+                    <div className="grid grid-cols-[1fr,3fr] gap-2">
+                      <select
+                        name="countryCode"
+                        defaultValue="+1"
+                        {...register("countryCode")}
+                        className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
+                        onChange={(e) => setCountryCode(e.target.value)}
+                      >
+                        <option value="+1">CA</option>
+                        <option value="+1">US</option>
+                        <option value="+44">UK</option>
+                        <option value="+33">FR</option>
+                        <option value="+49">DE</option>
+                        <option value="+81">JP</option>
+                        <option value="+86">CN</option>
+                        <option value="+91">IN</option>
+                        <option value="+61">AU</option>
+                        <option value="+52">MX</option>
+                        <option value="+7">RU</option>
+                      </select>
                       <input
                         name="phone"
                         {...register("phone")}
                         type="tel"
-                        placeholder={t.form.phonePlaceholder || "telephone"}
+                        placeholder={countryCode}
                         className="p-3 border border-gray-300 rounded-md w-full"
                       />
-                      {errors.phone && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {language === "fr"
-                            ? "Numéro de téléphone invalide"
-                            : errors.phone.message}
-                        </p>
-                      )}
                     </div>
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {language === "fr"
+                          ? "Numéro de téléphone invalide"
+                          : errors.phone.message}
+                      </p>
+                    )}
                   </div>
                 </div>
-
                 <button
                   type="submit"
                   className="w-1/2 mx-auto mt-10 flex justify-center bg-blue-800 text-white p-3 rounded-md hover:bg-blue-700"

@@ -3,6 +3,7 @@ import { LanguageContext } from "@/lib/LanguageContext";
 import { translations } from "@/public/language/language";
 import { Home, Globe } from "lucide-react";
 import { useContext, useState } from "react";
+import StoreDropdown from "./StoreDropdown";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,9 +31,7 @@ export default function Navbar() {
             <a href="#" className="text-gray-700 hover:text-blue-800">
               {t.navbar.solutions}
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-800">
-              {t.navbar.resources}
-            </a>
+            <StoreDropdown />
             <a
               href="/jadeorder/learning-center"
               className="text-gray-700 hover:text-blue-800"
@@ -118,9 +117,7 @@ export default function Navbar() {
               <a href="#" className="block text-gray-700 hover:text-blue-800">
                 {t.navbar.solutions}
               </a>
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
-                {t.navbar.resources}
-              </a>
+              <StoreDropdown />
               <a
                 href="/jadeorder/learning-center"
                 className="block text-gray-700 hover:text-blue-800"

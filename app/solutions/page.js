@@ -30,7 +30,7 @@ const JadeOrdersComponent = () => {
       </div>
 
       {/* Admin Panels Section */}
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-16">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-16">
         <div className="w-full mx-auto mr-20 md:w-1/2">
           <img
             src="/jadeorder/solution1.png"

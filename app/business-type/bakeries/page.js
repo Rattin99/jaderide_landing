@@ -4,7 +4,7 @@ import BusinessHero from "@/components/BusinessHero";
 const RestaurantDelivery = () => {
   return (
     <div className=" min-h-screen py-10 ">
-      <BusinessHero imgSrc={"/jadeorder/resturanthero.jpg"} />
+      <BusinessHero imgSrc={"/jadeorder/bakeryhero.png"} />
       <div className="bg-blue-50 py-10 mb-20">
         <h1 className="text-3xl text-gray-700 sm:text-2xl lg:text-3xl font-bold text-center mb-12">
           How does restaurant delivery work?
@@ -75,7 +75,7 @@ const RestaurantDelivery = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 p-5">
           <div className="w-full lg:w-1/2">
             <Image
-              src="/jadeorder/rest1.png"
+              src="/jadeorder/bakery1.jpg"
               alt="Delivery person handing over a bag"
               width={600}
               height={400}
@@ -98,7 +98,7 @@ const RestaurantDelivery = () => {
         <div className="flex flex-col lg:flex-row-reverse items-center gap-8 p-5">
           <div className="w-full lg:w-1/2">
             <Image
-              src="/jadeorder/rest2.png"
+              src="/jadeorder/bakery2.jpg"
               alt="Restaurant staff working on a laptop"
               width={600}
               height={400}

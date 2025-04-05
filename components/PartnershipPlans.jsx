@@ -50,10 +50,10 @@ const PricingCards = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl md:text-3xl text-left md:text-center font-bold text-gray-800">
           Partnership plans made to work for you
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p className="text-gray-600 text-left md:text-center mt-2">
           Enjoy all our partnership plans* with zero payment processing fees.
           Change or cancel your plan at any time.
         </p>

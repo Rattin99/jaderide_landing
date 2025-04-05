@@ -28,7 +28,10 @@ export default function Navbar() {
             <a href="/jadeorder" className="text-gray-700 hover:text-blue-800">
               {t.navbar.home}
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-800">
+            <a
+              href="/jadeorder/solutions"
+              className="text-gray-700 hover:text-blue-800"
+            >
               {t.navbar.solutions}
             </a>
             <StoreDropdown />
@@ -114,7 +117,10 @@ export default function Navbar() {
               >
                 {t.navbar.home}
               </a>
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
+              <a
+                href="/jadeorder/solutions"
+                className="block text-gray-700 hover:text-blue-800"
+              >
                 {t.navbar.solutions}
               </a>
               <StoreDropdown />

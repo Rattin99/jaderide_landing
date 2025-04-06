@@ -188,18 +188,10 @@ export default function Hero() {
       </Dialog>
 
       <div className="py-20 relative">
-        {language == "en" && (
-          <img
-            src="/jadeorder/hero.png"
-            className="absolute top-0 object-cover w-full h-full   z-0"
-          />
-        )}
-        {language == "fr" && (
-          <img
-            src="/jadeorder/hero_fr.png"
-            className="absolute top-0 object-cover w-full h-full  z-0"
-          />
-        )}
+        <img
+          src="/jadeorder/hero.png"
+          className="absolute top-0 object-cover w-full h-full   z-0"
+        />
         <div className="container relative w-full mx-auto px-4 z-10">
           <div className="flex flex-col w-full mt-12 lg:flex-row items-center lg:items-end lg:justify-end">
             <div className="lg:w-1/2"></div>

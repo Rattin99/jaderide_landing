@@ -107,16 +107,12 @@ export default function Hero() {
 
   const onSubmit = async (data) => {
     try {
-      // Destructure country code and phone, then create full phone number
       const { countryCode, phone, ...otherData } = data;
 
-      // Remove any non-digit characters from phone number
       const cleanedPhone = phone.replace(/\D/g, "");
 
-      // Merge country code and cleaned phone number
       const fullPhoneNumber = `${countryCode}${cleanedPhone}`;
 
-      // Create a new data object with merged phone number
       const submissionData = {
         ...otherData,
         phone: fullPhoneNumber,

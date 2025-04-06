@@ -165,6 +165,53 @@ export const translations = {
         waysToGrow: "Ways to Grow",
       },
     },
+    businessTypes: {
+      titles: {
+        restaurant: "How does restaurant delivery work?",
+        grocery: "How does grocery delivery work?",
+        coffee: "How does coffee delivery work?",
+        retail: "How does retail delivery work?",
+        flower: "How does flower delivery work?",
+        pet: "How does pet delivery work?",
+        convenience: "How does convenience delivery work?",
+        pharmacy: "How does pharmacy delivery work?",
+        bakeries: "How does bakeries delivery work?",
+        "book store": "How does book store delivery work?",
+        gift: "How does gift delivery work?",
+      },
+      steps: {
+        title1: "Set up your store",
+        description1:
+          "Send us the inventory you want to list, and we’ll work with you to list your restaurant menu on Jade Orders.",
+        title2: "Start receiving orders",
+        description2:
+          "Once your account is activated, Jade Orders customers can shop and pay for items online.",
+        title3: "Partner for delivery",
+        description3:
+          "Have your team or Jade Orders do the shopping and deliver orders to customers via the Jade Orders network.",
+      },
+      types: {
+        restaurant: "Restaurant",
+        grocery: "Grocery",
+        coffee: "Coffee",
+        retail: "Retail",
+        flower: "Flower",
+        pet: "Pet",
+        convenience: "Convenience",
+        pharmacy: "Pharmacy",
+        bakeries: "Bakeries",
+        bookStore: "Book Store",
+        gift: "Gift",
+      },
+      copy: {
+        title1: "Quick, efficient delivery",
+        description1:
+          "Market your store on Jade Orders and connect with new customers in your neighborhood. Jade Orders’ average delivery time is 35 minutes or less, and you’ll never have to hire or train drivers.",
+        title2: "Built for your business",
+        description2:
+          "Jade Orders takes care of the restaurant shopping and delivery directly, so business owners can have peace of mind and accept orders and pack items, only handing them off to Jade Orders for delivery.",
+      },
+    },
   },
   fr: {
     commitmentSection: {
@@ -332,6 +379,53 @@ export const translations = {
         manageOrders: "Gérer les commandes",
         storeManagement: "Gestion du magasin",
         waysToGrow: "Façons de se développer",
+      },
+    },
+    businessTypes: {
+      steps: {
+        title1: "Configurez votre magasin",
+        description1:
+          "Envoyez-nous l'inventaire que vous souhaitez répertorier, et nous travaillerons avec vous pour répertorier votre menu de restaurant sur Jade Orders.",
+        title2: "Commencez à recevoir des commandes",
+        description2:
+          "Une fois votre compte activé, les clients de Jade Orders peuvent acheter et payer des articles en ligne.",
+        title3: "Partenariat pour la livraison",
+        description3:
+          "Laissez votre équipe ou Jade Orders faire les courses et livrer les commandes aux clients via le réseau Jade Orders.",
+      },
+      types: {
+        restaurant: "Restaurant",
+        grocery: "Épicerie",
+        coffee: "Café",
+        retail: "Détail",
+        flower: "Fleur",
+        pet: "Animal",
+        convenience: "Commodité",
+        pharmacy: "Pharmacie",
+        bakeries: "Boulangeries",
+        bookStore: "Librairie",
+        gift: "Cadeau",
+      },
+      copy: {
+        title1: "Livraison rapide et efficace",
+        description1:
+          "Faites la promotion de votre magasin sur Jade Orders et nouez des contacts avec de nouveaux clients dans votre quartier. Le temps de livraison moyen de Jade Orders est de 35 minutes ou moins, et vous n'aurez jamais à embaucher ou former des chauffeurs.",
+        title2: "Conçu pour votre entreprise",
+        description2:
+          "Jade Orders s'occupe directement des achats et de la livraison pour les restaurants, afin que les propriétaires d'entreprise puissent avoir l'esprit tranquille et accepter les commandes, emballer les articles, et les remettre simplement à Jade Orders pour la livraison.",
+      },
+      titles: {
+        restaurant: "Comment fonctionne la livraison de restaurant?",
+        grocery: "Comment fonctionne la livraison d'épicerie?",
+        coffee: "Comment fonctionne la livraison de café?",
+        retail: "Comment fonctionne la livraison de détail?",
+        flower: "Comment fonctionne la livraison de fleurs?",
+        pet: "Comment fonctionne la livraison d'animaux de compagnie?",
+        convenience: "Comment fonctionne la livraison de dépanneur?",
+        pharmacy: "Comment fonctionne la livraison de pharmacie?",
+        bakeries: "Comment fonctionne la livraison de boulangerie?",
+        bookStore: "Comment fonctionne la livraison de librairie?",
+        gift: "Comment fonctionne la livraison de cadeaux?",
       },
     },
   },

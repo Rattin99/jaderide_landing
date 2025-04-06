@@ -107,16 +107,12 @@ export default function BusinessHero({ imgSrc }) {
 
   const onSubmit = async (data) => {
     try {
-      // Destructure country code and phone, then create full phone number
       const { countryCode, phone, ...otherData } = data;
 
-      // Remove any non-digit characters from phone number
       const cleanedPhone = phone.replace(/\D/g, "");
 
-      // Merge country code and cleaned phone number
       const fullPhoneNumber = `${countryCode}${cleanedPhone}`;
 
-      // Create a new data object with merged phone number
       const submissionData = {
         ...otherData,
         phone: fullPhoneNumber,
@@ -182,8 +178,7 @@ export default function BusinessHero({ imgSrc }) {
 
             <div className="w-full lg:w-5/12 bg-white p-6 md:p-8 rounded-md shadow-lg">
               <h2 className="text-xl font-semibold text-gray-700 mb-4">
-                Tap into a new revenue stream with JMD, the perfect pairing for
-                your business.
+                {t.heroSection.title}
               </h2>
 
               <form

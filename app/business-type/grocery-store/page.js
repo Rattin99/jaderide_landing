@@ -1,13 +1,18 @@
 "use client";
 import Image from "next/image";
 import BusinessHero from "@/components/BusinessHero";
+import { translations } from "@/public/language/language";
+import { useContext } from "react";
+import { LanguageContext } from "@/lib/LanguageContext";
 const RestaurantDelivery = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <div className=" min-h-screen py-10 ">
       <BusinessHero imgSrc={"/jadeorder/groceryhero.jpg"} />
       <div className="bg-blue-50 py-10 mb-20">
         <h1 className="text-3xl text-gray-700 sm:text-2xl lg:text-3xl font-bold text-center mb-12">
-          How does restaurant delivery work?
+          {t.businessTypes.titles.restaurant}
         </h1>
 
         {/* Steps Section */}
@@ -23,10 +28,11 @@ const RestaurantDelivery = () => {
                 className="w-24 h-24"
               />
             </div>
-            <h2 className="text-xl font-semibold mb-2">Set up your store</h2>
+            <h2 className="text-xl font-semibold mb-2">
+              {t.businessTypes.steps.title1}
+            </h2>
             <p className="text-gray-600">
-              Send us the inventory you want to list, and we’ll work with you to
-              list your restaurant menu on Jade Orders.
+              {t.businessTypes.steps.description1}
             </p>
           </div>
 
@@ -42,11 +48,10 @@ const RestaurantDelivery = () => {
               />
             </div>
             <h2 className="text-xl font-semibold mb-2">
-              Start receiving orders
+              {t.businessTypes.steps.title2}
             </h2>
             <p className="text-gray-600">
-              Once your account is activated, Jade Orders customers can shop and
-              pay for items online.
+              {t.businessTypes.steps.description2}
             </p>
           </div>
 
@@ -61,17 +66,17 @@ const RestaurantDelivery = () => {
                 className="w-24 h-24"
               />
             </div>
-            <h2 className="text-xl font-semibold mb-2">Partner for delivery</h2>
+            <h2 className="text-xl font-semibold mb-2">
+              {t.businessTypes.steps.title3}
+            </h2>
             <p className="text-gray-600">
-              Have your team or Jade Orders do the shopping and deliver orders
-              to customers via the Jade Orders network.
+              {t.businessTypes.steps.description3}{" "}
             </p>
           </div>
         </div>
       </div>
-      {/* Image and Text Sections */}
+
       <div className="max-w-6xl mx-auto space-y-12">
-        {/* Section 1 */}
         <div className="flex flex-col lg:flex-row items-center gap-8 p-5">
           <div className="w-full lg:w-1/2">
             <Image
@@ -84,13 +89,9 @@ const RestaurantDelivery = () => {
           </div>
           <div className="w-full lg:w-1/2">
             <h3 className="text-2xl text-gray-700 font-semibold mb-4">
-              Quick, efficient delivery
+              {t.businessTypes.copy.title1}
             </h3>
-            <p className="text-gray-600">
-              Market your store on Jade Orders and connect with new customers in
-              your neighborhood. Jade Orders’ average delivery time is 35
-              minutes or less, and you’ll never have to hire or train drivers.
-            </p>
+            <p className="text-gray-600">{t.businessTypes.copy.description1}</p>
           </div>
         </div>
 
@@ -107,13 +108,10 @@ const RestaurantDelivery = () => {
           </div>
           <div className="w-full lg:w-1/2">
             <h3 className="text-2xl text-gray-700 font-semibold mb-4">
-              Built for your business
+              {t.businessTypes.copy.title2}
             </h3>
             <p className="text-gray-600">
-              Jade Orders takes care of the restaurant shopping and delivery
-              directly, so business owners can have peace of mind and accept
-              orders and pack items, only handing them off to Jade Orders for
-              delivery.
+              {t.businessTypes.copy.description2}{" "}
             </p>
           </div>
         </div>

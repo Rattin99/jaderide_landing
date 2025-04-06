@@ -9,27 +9,68 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { ChevronDown } from "lucide-react"; // Icon for the dropdown trigger
-
+import { LanguageContext } from "@/lib/LanguageContext";
+import { useContext } from "react";
 const storeItems = [
-  { name: "Restaurant", href: "/jadeorder/business-type/resturant" },
-  { name: "Grocery Store", href: "/jadeorder/business-type/grocery-store" },
+  {
+    name: "Restaurant",
+    nameFr: "Restaurant",
+    href: "/jadeorder/business-type/resturant",
+  },
+  {
+    name: "Grocery Store",
+    nameFr: "Épicerie",
+    href: "/jadeorder/business-type/grocery-store",
+  },
   {
     name: "Coffee Shop",
+    nameFr: "Café",
     href: "/jadeorder/business-type/coffee-shop",
     isSelected: true,
   },
-  { name: "Retail Store", href: "/jadeorder/business-type/retail-store" },
-  { name: "Flower Shop", href: "/jadeorder/business-type/flower-shop" },
-  { name: "Pet Shop", href: "/jadeorder/business-type/pet-shop" },
-  { name: "Convenience", href: "/jadeorder/business-type/convenience" },
-  { name: "Pharmacy", href: "/jadeorder/business-type/pharmacy" },
-  { name: "Bakeries", href: "/jadeorder/business-type/bakeries" },
-  { name: "Book Store", href: "/jadeorder/business-type/book-store" },
-  { name: "Gifts", href: "/jadeorder/business-type/gifts" },
+  {
+    name: "Retail Store",
+    nameFr: "Commerce de détail",
+    href: "/jadeorder/business-type/retail-store",
+  },
+  {
+    name: "Flower Shop",
+    nameFr: "Fleuriste",
+    href: "/jadeorder/business-type/flower-shop",
+  },
+  {
+    name: "Pet Shop",
+    nameFr: "Animalerie",
+    href: "/jadeorder/business-type/pet-shop",
+  },
+  {
+    name: "Convenience",
+    nameFr: "Dépanneur",
+    href: "/jadeorder/business-type/convenience",
+  },
+  {
+    name: "Pharmacy",
+    nameFr: "Pharmacie",
+    href: "/jadeorder/business-type/pharmacy",
+  },
+  {
+    name: "Bakeries",
+    nameFr: "Boulangerie",
+    href: "/jadeorder/business-type/bakeries",
+  },
+  {
+    name: "Book Store",
+    nameFr: "Librairie",
+    href: "/jadeorder/business-type/book-store",
+  },
+  {
+    name: "Gifts",
+    nameFr: "Cadeaux",
+    href: "/jadeorder/business-type/gifts",
+  },
 ];
 const StoreDropdown = () => {
-  const selectedItem =
-    storeItems.find((item) => item.isSelected) || storeItems[0];
+  const { language } = useContext(LanguageContext);
 
   return (
     <DropdownMenu>
@@ -50,7 +91,7 @@ const StoreDropdown = () => {
             asChild
           >
             <a href={item.href} className="w-full">
-              {item.name}
+              {language == "en" ? item.name : item.nameFr}
             </a>
           </DropdownMenuItem>
         ))}

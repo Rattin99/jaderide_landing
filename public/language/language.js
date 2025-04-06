@@ -89,6 +89,7 @@ export const translations = {
       learningCenter: "Learning Center",
       contact: "Contact",
       button: "Get Started",
+      businessType: "Business Type",
     },
     stepsSection: {
       title: "Starting with Jade Media Delivery is easy",
@@ -212,6 +213,27 @@ export const translations = {
           "Jade Orders takes care of the restaurant shopping and delivery directly, so business owners can have peace of mind and accept orders and pack items, only handing them off to Jade Orders for delivery.",
       },
     },
+    solutions: {
+      subtitle:
+        "Unlock more sales with products and services that help you scale and find new customers, improve profitability, and take your business to the next level.",
+      button: "Get started with Jade Orders",
+      alreadyOn: "Already on Jade Orders?",
+      adminPanel: {
+        superAdminPanel: "Super Admin Panel",
+        superAdminPanelDesc: "Admin Panel To Control Whole Platform.",
+        adminPanelMerchants: "Admin Panel For Merchants",
+        adminPanelMerchantsDesc:
+          "Admin Panel for Merchants To Control Business.",
+        customerWebsite: "Customer Website",
+        customerWebsiteDesc: "Customer Website To Get Service.",
+        merchantApp: "Jade Orders Merchant",
+        merchantAppDesc: "Merchant App",
+        customerApp: "Jade Orders Customer",
+        customerAppDesc: "Customer App",
+        riderApp: "Jade Orders Rider",
+        riderAppDesc: "Rider App",
+      },
+    },
   },
   fr: {
     commitmentSection: {
@@ -302,6 +324,7 @@ export const translations = {
       learningCenter: "Centre d’apprentissage",
       contact: "Contact",
       button: "Commencer",
+      businessType: "Type d'entreprise",
     },
     stepsSection: {
       title: "Commencer avec Jade Media Delivery est facile.",
@@ -426,6 +449,29 @@ export const translations = {
         bakeries: "Comment fonctionne la livraison de boulangerie?",
         bookStore: "Comment fonctionne la livraison de librairie?",
         gift: "Comment fonctionne la livraison de cadeaux?",
+      },
+    },
+    solutions: {
+      subtitle:
+        "Débloquez plus de ventes avec des produits et services qui vous aident à vous développer et à trouver de nouveaux clients, à améliorer la rentabilité et à élever votre entreprise au niveau supérieur.",
+      button: "Commencer avec Jade Orders",
+      alreadyOn: "Déjà sur Jade Orders?",
+      adminPanel: {
+        superAdminPanel: "Super Panneau d'Administration",
+        superAdminPanelDesc:
+          "Panneau d'administration pour contrôler l'ensemble de la plateforme.",
+        adminPanelMerchants: "Panneau d'Administration pour les Commerçants",
+        adminPanelMerchantsDesc:
+          "Panneau d'administration pour les commerçants pour contrôler leur entreprise.",
+        customerWebsite: "Site Web pour les Clients",
+        customerWebsiteDesc:
+          "Site Web pour les clients pour obtenir le service.",
+        merchantApp: "Application pour les Commerçants",
+        merchantAppDesc: "Application pour les commerçants.",
+        customerApp: "Application pour les Clients",
+        customerAppDesc: "Application pour les clients.",
+        riderApp: "Application pour les Livreurs",
+        riderAppDesc: "Application pour les livreurs.",
       },
     },
   },

@@ -1,24 +1,34 @@
+"use client";
 import React from "react";
+import { useContext } from "react";
+import { LanguageContext } from "@/lib/LanguageContext";
+import { translations } from "@/public/language/language";
 
 const JadeOrdersComponent = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
   return (
     <div className="max-w-6xl mx-auto px-4 py-24 ">
       {/* Hero Section */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-16">
         <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pr-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
-            Pick the <span className="text-blue-600">best plan</span> for your
-            store
-          </h2>
-          <p className="text-gray-700 mb-6">
-            Unlock more sales with products and services that help you scale and
-            find new customers, improve profitability, and take your business to
-            the next level.
-          </p>
+          {language === "en" && (
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+              Pick the <span className="text-blue-600">best plan</span> for your
+              store
+            </h2>
+          )}
+          {language === "fr" && (
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+              Choisissez le <span className="text-blue-600">meilleur plan</span>{" "}
+              pour votre magasin
+            </h2>
+          )}
+          <p className="text-gray-700 mb-6">{t.solutions.subtitle}</p>
           <button className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium mb-3">
-            Get started with Jade Orders
+            {t.solutions.button}
           </button>
-          <p className="text-gray-600 text-sm">Already on Jade Orders?</p>
+          <p className="text-gray-600 text-sm">{t.solutions.alreadyOn}</p>
         </div>
         <div className="w-full md:w-1/2">
           <img
@@ -40,7 +50,9 @@ const JadeOrdersComponent = () => {
         </div>
         <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-8">
           <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Super Admin Panel</h3>
+            <h3 className="text-xl font-bold mb-4">
+              {t.solutions.adminPanel.superAdminPanel}
+            </h3>
             <div className="flex items-center mb-2">
               <div className="p-1 rounded mr-2">
                 <img
@@ -49,13 +61,13 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />
               </div>
-              <p>Admin Panel To Control Whole Platform.</p>
+              <p>{t.solutions.adminPanel.superAdminPanelDesc}</p>
             </div>
           </div>
 
           <div className="mb-8">
             <h3 className="text-xl font-bold mb-4">
-              Admin Panel For Merchants
+              {t.solutions.adminPanel.adminPanelMerchants}
             </h3>
             <div className="flex items-center mb-2">
               <div className=" p-1 rounded mr-2">
@@ -65,12 +77,14 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />
               </div>
-              <p>Admin Panel for Merchants To Control Business.</p>
+              <p>{t.solutions.adminPanel.adminPanelMerchantsDesc}</p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Customer Website</h3>
+            <h3 className="text-xl font-bold mb-4">
+              {t.solutions.adminPanel.customerWebsite}
+            </h3>
             <div className="flex items-center mb-2">
               <div className="p-1 rounded mr-2">
                 <img
@@ -79,7 +93,7 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />{" "}
               </div>
-              <p>Customer Website To Get Service.</p>
+              <p>{t.solutions.adminPanel.customerWebsiteDesc}</p>
             </div>
           </div>
         </div>
@@ -98,7 +112,7 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />
               </div>
-              <p>Merchant App</p>
+              <p>{t.solutions.adminPanel.merchantApp}</p>
             </div>
           </div>
 
@@ -112,7 +126,7 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />
               </div>
-              <p>Customer App</p>
+              <p>{t.solutions.adminPanel.customerApp}</p>
             </div>
           </div>
 
@@ -126,7 +140,7 @@ const JadeOrdersComponent = () => {
                   className="h-16 w-16"
                 />
               </div>
-              <p>Rider App</p>
+              <p>{t.solutions.adminPanel.riderApp}</p>
             </div>
           </div>
         </div>

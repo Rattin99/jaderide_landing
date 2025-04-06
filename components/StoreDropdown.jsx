@@ -11,6 +11,7 @@ import {
 import { ChevronDown } from "lucide-react"; // Icon for the dropdown trigger
 import { LanguageContext } from "@/lib/LanguageContext";
 import { useContext } from "react";
+import { translations } from "@/public/language/language";
 const storeItems = [
   {
     name: "Restaurant",
@@ -71,12 +72,13 @@ const storeItems = [
 ];
 const StoreDropdown = () => {
   const { language } = useContext(LanguageContext);
+  const t = translations[language];
 
   return (
     <DropdownMenu>
       {/* Dropdown Trigger */}
       <DropdownMenuTrigger className="text-gray-700 focus:outline-none flex">
-        Business Type
+        {t.navbar.businessType}
         <ChevronDown className="w-5 h-full  my-auto flex justify-center items-center" />
       </DropdownMenuTrigger>
 

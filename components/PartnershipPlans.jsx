@@ -14,36 +14,76 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import { useContext } from "react";
+import { LanguageContext } from "@/lib/LanguageContext";
+
+const translations = {
+  en: {
+    title: "Partnership plans made to work for you",
+    subtitle:
+      "Enjoy all our partnership plans* with zero payment processing fees. Change or cancel your plan at any time.",
+    features: ["Admin Panel", "Customer Website", "3 Apps"],
+    categories: ["Merchant", "Customers", "Rider"],
+    products: "Products",
+    buttons: {
+      basic: "Continue with Basic",
+      plus: "Continue with Plus",
+      premium: "Continue with Premium",
+      custom: "Contact Sales",
+    },
+  },
+  fr: {
+    title: "Des formules de partenariat pensées pour vous",
+    subtitle:
+      "Profitez de toutes nos formules de partenariat* sans frais de traitement. Changez ou annulez votre formule à tout moment.",
+    features: ["Panneau d'administration", "Site client", "3 applications"],
+    categories: ["Commerçant", "Clients", "Livreur"],
+    products: "Produits",
+    buttons: {
+      basic: "Continuer avec Basic",
+      plus: "Continuer avec Plus",
+      premium: "Continuer avec Premium",
+      custom: "Contacter les ventes",
+    },
+  },
+};
 
 const PricingCards = () => {
+  const { language } = useContext(LanguageContext);
+  const t = translations[language];
+
   const plans = [
     {
       name: "Basic",
-      features: ["Admin Panel", "Customer Website", "3 Apps"],
-      categories: ["Merchant", "Customers", "Rider"],
+      features: t.features,
+      categories: t.categories,
       products: 100,
-      buttonText: "Continue with Basic",
+      buttonText: t.buttons.basic,
     },
     {
       name: "Plus",
-      features: ["Admin Panel", "Customer Website", "3 Apps"],
-      categories: ["Merchant", "Customers", "Rider"],
+      features: t.features,
+      categories: t.categories,
       products: 300,
-      buttonText: "Continue with Plus",
+      buttonText: t.buttons.plus,
     },
     {
       name: "Premium",
-      features: ["Admin Panel", "Customer Website", "3 Apps"],
-      categories: ["Merchant", "Customers", "Rider"],
+      features: t.features,
+      categories: t.categories,
       products: 500,
-      buttonText: "Continue with Premium",
+      buttonText: t.buttons.premium,
     },
     {
       name: "Custom",
-      features: ["Admin Panel", "Customer Website", "Unlimited Apps"],
-      categories: ["Merchant", "Customers", "Rider"],
-      products: "Unlimited",
-      buttonText: "Contact Sales",
+      features: [
+        t.features[0],
+        t.features[1],
+        language === "fr" ? "Applications illimitées" : "Unlimited Apps",
+      ],
+      categories: t.categories,
+      products: language === "fr" ? "Illimité" : "Unlimited",
+      buttonText: t.buttons.custom,
     },
   ];
 
@@ -51,15 +91,14 @@ const PricingCards = () => {
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl text-left md:text-center font-bold text-gray-800">
-          Partnership plans made to work for you
+          {t.title}
         </h2>
         <p className="text-gray-600 text-left md:text-center mt-2">
-          Enjoy all our partnership plans* with zero payment processing fees.
-          Change or cancel your plan at any time.
+          {t.subtitle}
         </p>
       </div>
 
-      {/* Mobile view - vertical stack */}
+      {/* Mobile view */}
       <div className="md:hidden space-y-6">
         {plans.map((plan, index) => (
           <Card key={index} className="w-full">
@@ -82,7 +121,9 @@ const PricingCards = () => {
                   </div>
                 ))}
               </div>
-              <div className="font-medium">Products—{plan.products}</div>
+              <div className="font-medium">
+                {t.products} — {plan.products}
+              </div>
             </CardContent>
             <CardFooter>
               <button className="w-full py-2 bg-blue-600 text-white rounded font-medium text-sm">
@@ -93,7 +134,7 @@ const PricingCards = () => {
         ))}
       </div>
 
-      {/* Desktop view - carousel */}
+      {/* Desktop view */}
       <div className="hidden md:block">
         <Carousel className="w-full">
           <CarouselContent>
@@ -121,7 +162,7 @@ const PricingCards = () => {
                         ))}
                       </div>
                       <div className="font-medium">
-                        Products—{plan.products}
+                        {t.products} — {plan.products}
                       </div>
                     </CardContent>
                     <CardFooter>
@@ -144,7 +185,9 @@ const PricingCards = () => {
             {[0, 1].map((dot) => (
               <div
                 key={dot}
-                className={`h-2 w-2 rounded-full ${dot === 0 ? "bg-blue-600" : "bg-gray-300"}`}
+                className={`h-2 w-2 rounded-full ${
+                  dot === 0 ? "bg-blue-600" : "bg-gray-300"
+                }`}
               />
             ))}
           </div>

@@ -19,7 +19,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { LanguageContext } from "@/lib/LanguageContext";
 import { translations } from "@/public/language/language";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
   businessType: z.string().min(1, "Business Type is required"),
@@ -30,6 +36,20 @@ const formSchema = z.object({
   email: z.string().email("Invalid email format"),
   phone: z.string().min(1, "Phone number is required"),
 });
+
+const countryOptions = [
+  { short: "CA", name: "Canada", code: "+1" },
+  { short: "UK", name: "United Kingdom", code: "+44" },
+  { short: "US", name: "United States", code: "+1" },
+  { short: "FR", name: "France", code: "+33" },
+  { short: "DE", name: "Germany", code: "+49" },
+  { short: "JP", name: "Japan", code: "+81" },
+  { short: "CN", name: "China", code: "+86" },
+  { short: "IN", name: "India", code: "+91" },
+  { short: "AU", name: "Australia", code: "+61" },
+  { short: "MX", name: "Mexico", code: "+52" },
+  { short: "RU", name: "Russia", code: "+7" },
+];
 
 const renderSuggestion = (suggestion, getSuggestionItemProps) => {
   const { placeId } = suggestion;
@@ -58,6 +78,7 @@ export default function Hero() {
   const { language } = useContext(LanguageContext);
   const t = translations[language];
   const [countryCode, setCountryCode] = useState("+1");
+  const [countryShort, setCountryShort] = useState("CA");
 
   const {
     register,
@@ -371,28 +392,30 @@ export default function Hero() {
                           : errors.email.message}
                       </p>
                     )}
-                    <div className="grid grid-cols-[1fr,3fr] gap-2">
-                      <select
+                    <div className="grid grid-cols-[0.5fr,2fr] gap-2">
+                      <Select
+                        defaultValue="CA"
                         name="countryCode"
                         {...register("countryCode")}
                         className="p-3 border border-gray-300 bg-white rounded-md text-gray-700 w-full"
-                        onChange={(e) => setCountryCode(e.target.value)}
+                        onValueChange={(value) => {
+                          setCountryCode(
+                            countryOptions.find((c) => c.short === value).code,
+                          );
+                          setCountryShort(value);
+                        }}
                       >
-                        <option defaultChecked value="+1">
-                          CA
-                        </option>
-
-                        <option value="+44">UK</option>
-                        <option value="+1">US</option>
-                        <option value="+33">FR</option>
-                        <option value="+49">DE</option>
-                        <option value="+81">JP</option>
-                        <option value="+86">CN</option>
-                        <option value="+91">IN</option>
-                        <option value="+61">AU</option>
-                        <option value="+52">MX</option>
-                        <option value="+7">RU</option>
-                      </select>
+                        <SelectTrigger className="w-full h-full">
+                          <SelectValue>{countryShort}</SelectValue>
+                        </SelectTrigger>
+                        <SelectContent>
+                          {countryOptions.map((c) => (
+                            <SelectItem key={c.short} value={c.short}>
+                              {`${c.short} — ${c.name} (${c.code})`}
+                            </SelectItem>
+                          ))}{" "}
+                        </SelectContent>
+                      </Select>
                       <input
                         name="phone"
                         {...register("phone")}

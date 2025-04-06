@@ -278,7 +278,7 @@ export default function Hero() {
                       )}
                     </div>
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col relative">
                     <PlacesAutocomplete
                       value={address}
                       onChange={handleChange}
@@ -300,7 +300,7 @@ export default function Hero() {
                                 "p-3 rounded-md placeholder-gray-400 text-gray-700 w-full focus:outline-none border focus:ring-2 focus:ring-black",
                             })}
                           />
-                          <div className="bg-white rounded-md mt-1 shadow-lg">
+                          <div className="bg-white rounded-md mt-1 absolute top-10 shadow-lg">
                             {loading && (
                               <div className="p-2 text-gray-500">
                                 {t.form.loading}

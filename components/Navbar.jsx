@@ -41,9 +41,6 @@ export default function Navbar() {
             >
               {t.navbar.learningCenter}
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-800">
-              {t.navbar.contact}
-            </a>
           </div>
           <div className="flex items-center space-x-4">
             <div className="relative">
@@ -129,9 +126,6 @@ export default function Navbar() {
                 className="block text-gray-700 hover:text-blue-800"
               >
                 {t.navbar.learningCenter}
-              </a>
-              <a href="#" className="block text-gray-700 hover:text-blue-800">
-                {t.navbar.contact}
               </a>
 
               <button className="w-full bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-800">

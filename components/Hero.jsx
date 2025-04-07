@@ -61,7 +61,7 @@ export default function Hero() {
   const [address, setAddress] = useState("");
   const [userLocation, setUserLocation] = useState(null);
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
-  const [submittedName, setSubmittedName] = useState("");
+
   const { language } = useContext(LanguageContext);
   const t = translations[language];
   const [countryCode, setCountryCode] = useState("+1");
@@ -179,6 +179,24 @@ export default function Hero() {
           src="/jadeorder/hero.png"
           className="absolute top-0 object-cover w-full h-full   z-0"
         />
+        {language == "en" && (
+          <div className=" hidden md:block absolute bottom-24 left-24 z-10 w-1/5">
+            <h2 className="text-4xl font-bold">
+              Increase sales! <br /> Get your own{" "}
+              <span className="text-blue-900">Order</span> and
+              <span className="text-blue-900"> delivery</span> app
+            </h2>
+          </div>
+        )}
+        {language == "fr" && (
+          <div className=" hidden md:block absolute bottom-24 left-24 z-10 w-1/5">
+            <h2 className="text-4xl font-bold">
+              Augmentez vos ventes ! <br /> Obtenez votre propre application{" "}
+              <span className="text-blue-900">de commande</span> et
+              <span className="text-blue-900"> de livraison</span>
+            </h2>
+          </div>
+        )}
         <div className="container relative w-full mx-auto px-4 z-10">
           <div className="flex flex-col w-full mt-12 lg:flex-row items-center lg:items-end lg:justify-end">
             <div className="lg:w-1/2"></div>

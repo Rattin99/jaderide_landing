@@ -26,6 +26,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import countryOptions from "@/lib/CountryCodes.js";
 const formSchema = z.object({
   businessName: z.string().min(1, "Business Name is required"),
   businessType: z.string().min(1, "Business Type is required"),
@@ -36,20 +37,6 @@ const formSchema = z.object({
   email: z.string().email("Invalid email format"),
   phone: z.string().min(1, "Phone number is required"),
 });
-
-const countryOptions = [
-  { short: "CA", name: "Canada", code: "+1" },
-  { short: "UK", name: "United Kingdom", code: "+44" },
-  { short: "US", name: "United States", code: "+1" },
-  { short: "FR", name: "France", code: "+33" },
-  { short: "DE", name: "Germany", code: "+49" },
-  { short: "JP", name: "Japan", code: "+81" },
-  { short: "CN", name: "China", code: "+86" },
-  { short: "IN", name: "India", code: "+91" },
-  { short: "AU", name: "Australia", code: "+61" },
-  { short: "MX", name: "Mexico", code: "+52" },
-  { short: "RU", name: "Russia", code: "+7" },
-];
 
 const renderSuggestion = (suggestion, getSuggestionItemProps) => {
   const { placeId } = suggestion;

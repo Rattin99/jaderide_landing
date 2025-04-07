@@ -90,7 +90,7 @@ const PricingCards = () => {
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl text-left md:text-center font-bold text-gray-800">
+        <h2 className="text-2xl md:text-3xl text-left md:text-center font-bold text-gray-700">
           {t.title}
         </h2>
         <p className="text-gray-600 text-left md:text-center mt-2">
@@ -103,14 +103,14 @@ const PricingCards = () => {
         {plans.map((plan, index) => (
           <Card key={index} className="w-full">
             <CardHeader className="pb-2">
-              <CardTitle>{plan.name}</CardTitle>
+              <CardTitle className="text-gray-700">{plan.name}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 {plan.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-blue-600 mr-2" />
-                    <span>{feature}</span>
+                    <span className="text-gray-600">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -121,14 +121,17 @@ const PricingCards = () => {
                   </div>
                 ))}
               </div>
-              <div className="font-medium">
+              <div className="font-medium text-gray-700">
                 {t.products} — {plan.products}
               </div>
             </CardContent>
             <CardFooter>
-              <button className="w-full py-2 bg-blue-600 text-white rounded font-medium text-sm">
+              <a
+                href="/jadeorder/"
+                className="w-full py-2 bg-blue-600 text-white text-center rounded font-medium text-sm"
+              >
                 {plan.buttonText}
-              </button>
+              </a>
             </CardFooter>
           </Card>
         ))}
@@ -166,9 +169,12 @@ const PricingCards = () => {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <button className="w-full py-2 bg-blue-600 text-white rounded font-medium text-sm">
+                      <a
+                        href="/jadeorder/"
+                        className="w-full py-2 bg-blue-600 text-white text-center rounded font-medium text-sm"
+                      >
                         {plan.buttonText}
-                      </button>
+                      </a>
                     </CardFooter>
                   </Card>
                 </div>

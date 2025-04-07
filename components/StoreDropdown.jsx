@@ -87,9 +87,9 @@ const StoreDropdown = () => {
         {storeItems.map((item) => (
           <DropdownMenuItem
             key={item.name}
-            className={`${
-              item.isSelected ? "bg-blue-600 text-white" : "text-gray-700"
-            } hover:bg-blue-500 hover:text-white transition-colors`}
+            className={
+              "text-gray-700 hover:bg-blue-500 hover:text-white transition-colors"
+            }
             asChild
           >
             <a href={item.href} className="w-full">
